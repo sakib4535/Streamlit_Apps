@@ -2,8 +2,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_lottie import st_lottie
 import json
-import awesome_streamlit as ast
-import requests
+
 
 # Set the app title and favicon
 st.set_page_config(
