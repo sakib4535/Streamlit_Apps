@@ -637,7 +637,7 @@ with project_container:
     with col2:
         st.image("g20-1.png", width=400, caption="Image Classification Example")
     with col3:
-        st.image("g20-3.png", width=400, caption="Image Classification Example")
+        st.image("g20-3.PNG", width=400, caption="Image Classification Example")
 
     # Keywords section for Project 3
     keywords_project3 = [
