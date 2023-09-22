@@ -210,16 +210,12 @@ if st.button("Click Me for INSIGHTS!", key="click_me_button", help="Click to sho
              "Swift, data-informed responses mitigate damage, protecting brand reputation and integrity.")
 
     # Paragraph 5
-    st.write("6. **Predictive Analytics**: Predictive analytics forecasts trends and audience behavior. It empowers "
-             "strategic decision-making and resource allocation, maximizing communication impact.")
-
-    # Paragraph 5
     st.write("6. **Improving Public Health:**: PDuring global health crises, such as the COVID-19 pandemic, communication data "
              "plays a pivotal role in monitoring and responding to the situation. Analyzing communication patterns helps "
              "public health officials track the spread of the virus, identify misinformation, and plan effective interventions.")
 
     # Paragraph 5
-    st.write("6. **Predictive Analytics**: Predictive analytics forecasts trends and audience behavior. It empowers "
+    st.write("7. **Predictive Analytics**: Predictive analytics forecasts trends and audience behavior. It empowers "
              "strategic decision-making and resource allocation, maximizing communication impact. By analyzing communication data, "
              "we can anticipate societal trends and shifts in public sentiment. This knowledge is invaluable for businesses, "
              "policymakers, and researchers seeking to adapt to changing circumstances.")
