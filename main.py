@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_lottie import st_lottie
 import json
+import awesome_streamlit as ast
 import requests
 
 # Set the app title and favicon
@@ -15,18 +16,22 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    /* Reset default margin and padding */
     body {
         font-family: 'Arial', sans-serif;
-        background-color: #f0f0f0;
+        background-color: #222; /* Dark background color */
         margin: 0;
         padding: 0;
     }
 
+    /* Sidebar styling */
     .sidebar .sidebar-content {
-        background: linear-gradient(to bottom, #002366 0%, #3366cc 100%);
-        color: white;
+        background: linear-gradient(to bottom, #000 0%, #111 100%); /* Gradient background for sidebar */
+        color: white; /* Text color in sidebar */
+        padding: 20px; /* Add padding to the sidebar content */
     }
 
+    /* Centered content styles */
     .centered-content {
         display: flex;
         justify-content: center;
@@ -35,22 +40,24 @@ st.markdown(
         text-align: center;
     }
 
-    .profile-image {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-right: 20px;
+    /* Custom button style */
+    .custom-button {
+        background-color: #ff5733; /* Change the background color */
+        color: white; /* Change the text color */
+        padding: 12px 24px; /* Adjust padding as needed */
+        border: none;
+        border-radius: 8px; /* Change the border radius */
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
     }
-
-    .profile-image:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease-in-out;
+    
+    /* Change button color on hover */
+    .custom-button:hover {
+        background-color: #cc4222; /* Change the background color on hover */
     }
 
     /* Add more custom styles as needed */
-</style>
-
+    </style>
     """,
     unsafe_allow_html=True,
 )
@@ -67,7 +74,7 @@ with header_container:
     # Profile picture on the left
     col1, col2 = st.columns([1, 4])
     with col1:
-        profile_image = Image.open("F:/sakib.jpg")
+        profile_image = Image.open("sakib.jpg")
 
         st.image(profile_image, width=210)
 
@@ -96,7 +103,144 @@ with header_container:
  """
         )
 
-# Load your Lottie JSON animation
+
+
+
+
+
+
+
+
+################################
+
+# Custom CSS for the button style
+button_style = """
+    background-color: #ff5733; /* Change the background color */
+    color: white; /* Change the text color */
+    padding: 12px 24px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 10px; /* Change the border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+"""
+
+
+
+# CSS for the button style
+button_style = """
+    background: linear-gradient(45deg, #FFD700, #FF1493, #00BFFF, #32CD32);
+    background-size: 200% 200%;
+    animation: glowing 3s linear infinite;
+    color: white;
+    padding: 20px 40px;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+/* Add hover effect */
+.big-button:hover {
+    transform: scale(1.05);
+}
+
+/* Style for the big box */
+.big-box {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#surprise-box {
+    display: none;
+}
+
+function throwEmoticons() {
+    const surpriseBox = document.getElementById("surprise-box");
+    surpriseBox.innerHTML = "🎉😄🥳";
+    surpriseBox.style.display = "block";
+}
+"""
+
+# Create a div with a custom button style using st.markdown
+if st.button("Click Me for INSIGHTS!", key="click_me_button", help="Click to show the big box"):
+    st.markdown(
+        f'<div class="big-button" onclick="throwEmoticons()">'
+        '<button class="stButton">Big Box</button>'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    st.title("My Perspectives on Using Communication Data Science, Machine Learning and Computations")
+
+    st.write("1. **Enhancing Decision-Making:**:  In today's interconnected world, decisions made by individuals, businesses, "
+             "and governments are increasingly influenced by digital communication. Communication Data Science enables "
+             "us to make informed choices by providing real-time insights into public opinion, market trends, and "
+             "emerging issues.")
+    # Paragraph 1
+    st.write("2. **Audience Analysis**: Data technology enables precise audience analysis by leveraging data "
+             "analytics. It helps understand demographics, behaviors, and preferences, allowing tailored and "
+             "effective communication strategies. Sentiment analysis, powered by AI and NLP, gauges public "
+             "opinion, guiding strategic responses.")
+
+    # Paragraph 2
+    st.write("3. **Content Optimization**: Data-driven content optimization involves A/B testing to experiment "
+             "with elements and personalize content recommendations. Machine learning enhances user engagement "
+             "by delivering tailored content, boosting conversions.")
+
+    # Paragraph 3
+    st.write("4. **Media Planning and Buying**: Data science guides media planning with insights from historical "
+             "and real-time data. Programmatic advertising automates ad space purchase, ensuring targeted campaigns "
+             "and cost-efficient spending.")
+
+    # Paragraph 4
+    st.write("5. **Crisis Management**: Data analytics helps monitor social media and news for early crisis signs. "
+             "Swift, data-informed responses mitigate damage, protecting brand reputation and integrity.")
+
+    # Paragraph 5
+    st.write("6. **Predictive Analytics**: Predictive analytics forecasts trends and audience behavior. It empowers "
+             "strategic decision-making and resource allocation, maximizing communication impact.")
+
+    # Paragraph 5
+    st.write("6. **Improving Public Health:**: PDuring global health crises, such as the COVID-19 pandemic, communication data "
+             "plays a pivotal role in monitoring and responding to the situation. Analyzing communication patterns helps "
+             "public health officials track the spread of the virus, identify misinformation, and plan effective interventions.")
+
+    # Paragraph 5
+    st.write("6. **Predictive Analytics**: Predictive analytics forecasts trends and audience behavior. It empowers "
+             "strategic decision-making and resource allocation, maximizing communication impact. By analyzing communication data, "
+             "we can anticipate societal trends and shifts in public sentiment. This knowledge is invaluable for businesses, "
+             "policymakers, and researchers seeking to adapt to changing circumstances.")
+
+
+
+    st.markdown('<div id="surprise-box"></div>', unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+###############################################
+
+
+    # Load your Lottie JSON animation
     with open("animation_lmnn8dtf.json", "r") as json_file:  # Replace with the path to your Lottie JSON file
         lottie_json = json.load(json_file)
 
@@ -128,20 +272,26 @@ left_container, right_container = st.columns(2)
 
 # Left Side (with bullet points)
 with left_container:
-    st.header("Computational Skills")
-    st.text("Here are some of the skills I've developed:")
-    st.markdown("- Machine Learning")
-    st.markdown("- Natural Language Processing")
-    st.markdown("- Data Structure and Algorithms")
-    st.markdown("- Data Manipulation")
-    st.markdown("- Web Scraping")
-    st.markdown("- Data Analysis")
-    st.markdown("- Python Programming")
-    st.markdown("- Database Interaction")
-    st.markdown("- Data Manipulation")
-    st.markdown("- Feature Engineering")
-    st.markdown("- Exploratory Analysis")
-    st.markdown("- Data Visualization")
+    skills = [
+        {"name": "Machine Learning", "icon": "🤖"},
+        {"name": "Natural Language Processing", "icon": "📚"},
+        {"name": "Data Structures and Algorithms", "icon": "🧮"},
+        {"name": "Data Manipulation", "icon": "🔍"},
+        {"name": "Web Scraping", "icon": "🌐"},
+        {"name": "Data Analysis", "icon": "📊"},
+        {"name": "Python Programming", "icon": "🐍"},
+        {"name": "Database Interaction", "icon": "📂"},
+        {"name": "Feature Engineering", "icon": "🛠️"},
+        {"name": "Exploratory Analysis", "icon": "🔍"},
+        {"name": "Data Visualization", "icon": "📈"},
+    ]
+
+    # Left container
+    with st.container():
+        st.header("Computational Skills")
+        st.text("Here are some of the skills I've developed:")
+        for skill in skills:
+            st.markdown(f"- {skill['icon']} {skill['name']}")
 
 
 # Right Side (with bullet points and icons)
