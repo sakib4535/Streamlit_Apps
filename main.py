@@ -4,6 +4,7 @@ from streamlit_lottie import st_lottie
 import json
 
 
+
 # Set the app title and favicon
 st.set_page_config(
     page_title="Hasnain Imtiaz - Portfolio",
@@ -98,7 +99,19 @@ with header_container:
              feature engineering during feature extraction. This meticulous approach ensures that the input data is 
              well-prepared to yield optimal results when subjected to machine learning algorithms. Furthermore, 
              I am driven by a strong interest in delving into Recurrent Neural Networks (RNN) and Transformer-based models. 
-             These cutting-edge deep learning architectures hold significant promise for a wide range of natural language processing and sequence modeling tasks, and I am enthusiastic about exploring their potential applications in future projects.
+             These cutting-edge deep learning architectures hold significant promise for a wide range of natural language 
+             processing and sequence modeling tasks.
+            
+ """
+        )
+
+        st.write(
+            """ I am excited about the potential of AI and Machine Learning to understand how people behave in the 
+            digital world. During my undergraduate studies, I became intrigued by the idea of using technology to 
+            predict human behavior in online systems. I'm eager to learn more and start my journey in this fascinating 
+            field. As I embark on my master's journey, I am eager to explore the exciting field of AI and Machine Learning, 
+            with a specific interest in applying these technologies to model and predict human behavior in 
+            techno-social systems.
  """
         )
 
@@ -315,8 +328,8 @@ with right_container:
             "image_url": "https://www.vectorlogo.zone/logos/apache_hadoop/apache_hadoop-icon.svg",
         },
         {
-            "name": "Kafka",
-            "image_url": "https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg",
+            "name": "Apache Spark",
+            "image_url": "https://www.vectorlogo.zone/logos/apache_spark/apache_spark-icon.svg",
         },
         {
             "name": "Matlab",
@@ -351,10 +364,6 @@ with right_container:
             "image_url": "https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg",
         },
         {
-            "name": "Ruby on Rails",
-            "image_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg",
-        },
-        {
             "name": "Scikit-Learn",
             "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
         },
@@ -366,6 +375,19 @@ with right_container:
             "name": "TensorFlow",
             "image_url": "https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg",
         },
+        {
+            "name": "R Programming",
+            "image_url": "https://www.r-project.org/logo/Rlogo.png",
+        },
+        {
+            "name": "NumPy",
+            "image_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg",
+        },
+        {
+            "name": "Flask",
+            "image_url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original-wordmark.svg",
+        }
+
     ]
 
     # Display the icons and names in rows of 5
@@ -392,65 +414,76 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 # Center the Work Experience section
 # Center the Work Experience section and underline it
-st.markdown("<h1 style='text-align: center; text-decoration: underline;'>Work Experience</h1>", unsafe_allow_html=True)
+# Centered Work Experience
+# Define a CSS style for the boxes
+# Define a CSS style for the line with designs
+box_style = """
+    border: 2px solid #3366cc;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 5px 5px 10px #888888;
+"""
 
+line_style = """
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #3366cc, #f8f8f8, #3366cc);
+"""
 
-# Create a container for the centered content
-centered_container = st.container()
+# Define a CSS style for the title
+title_style = """
+    text-align: center;
+    font-size: 30px;
+    color: #3366cc;
+    margin-top: 10px;
+    margin-bottom: 20px;
+"""
 
 # Centered Work Experience
-with centered_container:
-    st.markdown("<h3 style='text-align: center;'>Student, Machine Learning Engineering</h1>", unsafe_allow_html=True)
-    st.markdown("<h4 style='text-align: center;'>Creative IT Institute, Professional IT Certificate</h4>", unsafe_allow_html=True)
-    st.markdown("<h4 style='text-align: center;'>January 2023 - Present</h4>", unsafe_allow_html=True)
-    # Style the description with a box
-    st.markdown("""
-          <div style='
-              background-color: #f8f8f8;
-              border: 2px solid #3366cc;
-              border-radius: 10px;
-              padding: 20px;
-              text-align: left;
-          '>
-              <p style='font-size: 16px;'>
-              This Professional Course dives into the theoretical and practical aspects of programming concepts in Python and 
-              explores a wide range of topics in data science. We cover Python basics, object-oriented programming, and 
-              advanced data structures. This course introduced different libraries: Pandas, Numpy, Matplotlib, and Seaborn, 
-              Scikit-learn, OpenCV, PyTorch, for data manipulation, numerical computing, and visualization. Exploratory 
-              Data Analysis (EDA) is done using real-world datasets like Iris and Haberman. Probability theory, including 
-              Poisson and Gaussian distributions, is covered. NLP techniques like BOW, TF-IDF, and tokenization are introduced. 
-              Machine Learning algorithms such as KNN, Naive Bayes, logistic regression, SVM, decision trees, and random forests 
-              are explored. Clustering, sentiment analysis, recommendation systems, and cancer prediction projects are undertaken. 
-              This course equips us with theoretical knowledge and practical skills in Python, data science, and machine learning.
-              </p>
-          </div>
-      """, unsafe_allow_html=True)
+st.markdown(f"<hr style='{line_style}'>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Work Experience</h1>", unsafe_allow_html=True)
+st.markdown(f"<hr style='{line_style}'>", unsafe_allow_html=True)
 
-    st.markdown("<h3 style='text-align: center;'>Research Assistant</h3>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center;'>Microgovernance Research Initiatives</h3>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center;'>July 2021 - December 2021</h3>", unsafe_allow_html=True)
-    st.markdown("""
-             <div style='
-                 background-color: #f8f8f8;
-                 border: 2px solid #3366cc;
-                 border-radius: 10px;
-                 padding: 20px;
-                 text-align: left;
-             '>
-                 <p style='font-size: 16px;'> During my tenure as a research assistant at MGR, a renowned public university, I had the opportunity to engage "
-        "in a range of valuable experiences and training programs. One of the highlights was receiving training in advanced "
-        "research techniques, which equipped me with the necessary skills to conduct high-quality research. Through workshops "
-        "and seminars, I gained a deeper understanding of various research methodologies and data analysis techniques, "
-        "allowing me to contribute effectively to research projects. Moreover, I had the privilege of participating in "
-        "workshops conducted by prominent organizations such as the International Foundation for Electoral Systems (IFES)"
-        " and BRAC. These workshops focused on important societal issues, with a particular emphasis on gender, society, "
-        "misinformation, cyber threats, and social media platforms. Engaging in these workshops provided me with a "
-        "comprehensive understanding of these topics and their impact on contemporary society. I gained insights into the "
-        "challenges posed by gender inequality, the spread of misinformation in the digital age, the growing threat of "
-        "cyber attacks, and the influence of social media platforms on public opinion and discourse." </p>
-          </div>
-      """, unsafe_allow_html=True)
+# Student, Machine Learning Engineering
+st.markdown("<h3 style='text-align: center;'>Student, Machine Learning Engineering</h3>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center;'>Creative IT Institute, Professional IT Certificate</h4>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center;'>January 2023 - Present</h4>", unsafe_allow_html=True)
+# Apply box style to the description
+st.markdown(f"<div style='{box_style}'>"
+    "This Professional Course dives into the theoretical and practical aspects of programming concepts in Python and "
+    "explores a wide range of topics in data science. We cover Python basics, object-oriented programming, and "
+    "advanced data structures. This course introduced different libraries: Pandas, Numpy, Matplotlib, and Seaborn, "
+    "Scikit-learn, OpenCV, PyTorch, for data manipulation, numerical computing, and visualization. Exploratory "
+    "Data Analysis (EDA) is done using real-world datasets like Iris and Haberman. Probability theory, including "
+    "Poisson and Gaussian distributions, is covered. NLP techniques like BOW, TF-IDF, and tokenization are introduced. "
+    "Machine Learning algorithms such as KNN, Naive Bayes, logistic regression, SVM, decision trees, and random forests "
+    "are explored. Clustering, sentiment analysis, recommendation systems, and cancer prediction projects are undertaken. "
+    "This course equips us with theoretical knowledge and practical skills in Python, data science, and machine learning."
+    "</div>", unsafe_allow_html=True)
 
+# Research Assistant
+st.markdown("<h3 style='text-align: center;'>Research Assistant</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Microgovernance Research Initiatives</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>July 2021 - December 2021</h3>", unsafe_allow_html=True)
+
+# Apply box style to the description
+st.markdown(f"<div style='{box_style}'>"
+    "During my tenure as a research assistant at MGR, a renowned public university, I had the opportunity to engage in "
+    "a range of valuable experiences and training programs. One of the highlights was receiving training in advanced "
+    "research techniques, which equipped me with the necessary skills to conduct high-quality research. Through workshops "
+    "and seminars, I gained a deeper understanding of various research methodologies and data analysis techniques, "
+    "allowing me to contribute effectively to research projects. Moreover, I had the privilege of participating in "
+    "workshops conducted by prominent organizations such as the International Foundation for Electoral Systems (IFES) "
+    "and BRAC. These workshops focused on important societal issues, with a particular emphasis on gender, society, "
+    "misinformation, cyber threats, and social media platforms. Engaging in these workshops provided me with a "
+    "comprehensive understanding of these topics and their impact on contemporary society. I gained insights into the "
+    "challenges posed by gender inequality, the spread of misinformation in the digital age, the growing threat of "
+    "cyber attacks, and the influence of social media platforms on public opinion and discourse."
+    "</div>", unsafe_allow_html=True)
 
 # Projects
 # Projects
@@ -462,7 +495,7 @@ project_container = st.container()
 
 # Project 1: Game Data Analytics using Ratings, Playtime, Suggestions
 with project_container:
-    st.subheader("Game Data Analytics using Ratings, Playtime, Suggestions")
+    st.subheader("*** Game Data Analytics using Ratings, Playtime, Suggestions")
 
     # Create a single row to display the image and description side by side
     col1, col2 = st.columns([1, 2])  # Adjust the number of columns as needed
@@ -529,7 +562,7 @@ with project_container:
 
 # Project 2: Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns
 with project_container:
-    st.subheader("Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns")
+    st.subheader("*** Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns")
 
     # Create a single row to display the left and right columns
     left_col, right_col = st.columns([1, 2])  # Adjust the column proportions as needed
@@ -603,7 +636,7 @@ with project_container:
 
 # Project 3:
 with project_container:
-    st.subheader("""Looking Through a National News Article Texts to learn about the name 'Joe Biden' !""")
+    st.subheader("""*** Looking Through a National News Article Texts to learn about the name 'Joe Biden' !""")
     # Create a box for the project description
     st.markdown(
         """
@@ -669,7 +702,7 @@ with project_container:
 
 # Project 4: GamersHub: Text and Opinion Mining of Reddit Comments
 with project_container:
-    st.subheader("GamersHub: Text and Opinion Mining of Reddit Comments")
+    st.subheader("*** GamersHub: Text and Opinion Mining of Reddit Comments")
 
 
     # Create a box for the project description
@@ -739,6 +772,67 @@ with project_container:
         """,
         unsafe_allow_html=True,
     )
+
+
+# Add some spacing between the previous section and the text container
+st.write(" ")  # Adds a blank line for separation
+st.write(" ")
+
+# Define a CSS style for the video section
+video_style = """
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Background color for the video section */
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #888888; /* Add a box shadow for a beautiful design */
+"""
+
+import streamlit as st
+
+# Define a CSS style for the text container
+text_container_style = """
+    background-color: #56bdcf;
+    border: 2px solid #b8e05b;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(167, 123, 123, 0.1);
+    padding: 20px;
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+"""
+
+# Apply the text container style
+st.markdown(f"""
+    <div style='{text_container_style}'>
+        <h2 style='color: #333;'>Experiencing the World of Data!</h2>
+        <p style='font-size: 16px;'>
+            In the world of technology and programming, I embark on a journey through a diverse spectrum of topics. Algorithm analysis equips me with the precision to measure code efficiency, while the art of graphing transforms raw data into captivating visuals. Application deployment becomes my conduit to reaching end users seamlessly. Within the heart of this technological landscape, machine learning algorithms emerge as the crown jewels, bestowing my applications with predictive prowess. Amidst this exciting landscape, I find joy in my work, encapsulated as 'Fun with Work,' a guiding compass through the intricate tapestry of daily endeavors.
+        </p>
+    </div>
+""", unsafe_allow_html=True)
+
+
+
+# List of video files
+video_files = [
+    "algorithm.mp4",
+    "simulation.mp4",
+    "nasa.mp4",
+    "game_of_life_simulation.mp4",
+    "my_app.mp4",
+
+    # Add more video files as needed
+]
+
+# Select a video to display
+selected_video = st.selectbox("Select a video to play", video_files)
+
+# Display the selected video
+st.video(selected_video, format="video/mp4")
+
+
+# Close the video section
+st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 # You can add more projects and sections as needed
