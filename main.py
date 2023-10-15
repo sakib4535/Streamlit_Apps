@@ -249,7 +249,7 @@ if st.button("Click Me for INSIGHTS!", key="click_me_button", help="Click to sho
 
 
     # Load your Lottie JSON animation
-    with open("animation_lmnn8dtf.json", "r") as json_file:  # Replace with the path to your Lottie JSON file
+    with open("animation_lnrarq3q.json", "r") as json_file:  # Replace with the path to your Lottie JSON file
         lottie_json = json.load(json_file)
 
     with open("animation_lmnn38qn.json", "r") as json_file2:  # Replace with the path to your second Lottie JSON file
@@ -411,6 +411,33 @@ col1, col2, col3 = st.columns(3)  # Adjust the number of columns as needed
 
 # Close the box
 st.markdown("</div>", unsafe_allow_html=True)
+
+##########################
+
+# Load your Lottie JSON animation
+with open("data2.json", "r") as json_file:  # Replace with the path to your Lottie JSON file
+    lottie_json = json.load(json_file)
+
+with open("AI.json", "r") as json_file2:  # Replace with the path to your second Lottie JSON file
+    lottie_json2 = json.load(json_file2)
+
+with open("data.json", "r") as json_file3:  # Replace with the path to your third Lottie JSON file
+    lottie_json3 = json.load(json_file3)
+
+# Create columns to display animations
+col1, col2, col3 = st.columns(3)
+
+# Display the first animation in the first column
+with col1:
+    st_lottie(lottie_json, speed=1, height=200)
+
+# Display the second animation in the second column
+with col2:
+    st_lottie(lottie_json2, speed=1, height=200)
+
+# Display the third animation in the third column
+with col3:
+    st_lottie(lottie_json3, speed=1, height=200)
 
 # Center the Work Experience section
 # Center the Work Experience section and underline it
