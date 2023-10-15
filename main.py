@@ -414,9 +414,9 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 ##########################
 
-# Load your Lottie JSON animation
-with open("data2.json", "r") as json_file:  # Replace with the path to your Lottie JSON file
-    lottie_json = json.load(json_file)
+# Load your Lottie JSON animations
+with open("data2.json", "r") as json_file1:  # Replace with the path to your first Lottie JSON file
+    lottie_json1 = json.load(json_file1)
 
 with open("AI.json", "r") as json_file2:  # Replace with the path to your second Lottie JSON file
     lottie_json2 = json.load(json_file2)
@@ -425,20 +425,19 @@ with open("data.json", "r") as json_file3:  # Replace with the path to your thir
     lottie_json3 = json.load(json_file3)
 
 # Create columns to display animations
-col1, col2, col3 = st.columns(3)
+col11, col22, col33 = st.columns(3)
 
 # Display the first animation in the first column
-with col1:
-    st_lottie(lottie_json, speed=1, height=200)
+with col11:
+    st_lottie(lottie_json1, speed=1, height=200)
 
 # Display the second animation in the second column
-with col2:
+with col22:
     st_lottie(lottie_json2, speed=1, height=200)
 
 # Display the third animation in the third column
-with col3:
+with col33:
     st_lottie(lottie_json3, speed=1, height=200)
-
 # Center the Work Experience section
 # Center the Work Experience section and underline it
 # Centered Work Experience
@@ -525,14 +524,14 @@ with project_container:
     st.subheader("*** Game Data Analytics using Ratings, Playtime, Suggestions")
 
     # Create a single row to display the image and description side by side
-    col1, col2 = st.columns([1, 2])  # Adjust the number of columns as needed
+    col111, col222 = st.columns([1, 2])  # Adjust the number of columns as needed
 
     # Display the image on the left
-    with col1:
+    with col111:
         st.image("relations-RF.png", width=400, caption="Sentiment Analysis Example")
 
     # Create a box for the project description and shift it to the right
-    with col2:
+    with col222:
         # Apply CSS styles to create a box and right shift it
         st.markdown(
             """
@@ -685,14 +684,14 @@ with project_container:
     )
 
     # Create a single row to display the images horizontally
-    col1, col2, col3 = st.columns(3)  # Adjust the number of columns as needed
+    col1111, col2222, col3333 = st.columns(3)  # Adjust the number of columns as needed
 
     # Display the images horizontally within the same container
-    with col1:
+    with col1111:
         st.image("g20.png", width=400, caption="Sentiment Analysis Example")
-    with col2:
+    with col2222:
         st.image("g20-1.png", width=400, caption="Image Classification Example")
-    with col3:
+    with col3333:
         st.image("g20-3.PNG", width=400, caption="Image Classification Example")
 
     # Keywords section for Project 3
@@ -760,14 +759,14 @@ with project_container:
     )
 
     # Create a single row to display the images horizontally
-    col1, col2, col3 = st.columns(3)  # Adjust the number of columns as needed
+    col11111, col22222, col33333 = st.columns(3)  # Adjust the number of columns as needed
 
     # Display the images horizontally within the same container
-    with col1:
+    with col11111:
         st.image("reddit2.png", width=400, caption="Image 1")
-    with col2:
+    with col22222:
         st.image("reddit1.png", width=400, caption="Image 2")
-    with col3:
+    with col33333:
         st.image("reddit3.png", width=400, caption="Image 3")
 
     # Keywords section for Project 4
@@ -907,10 +906,10 @@ with centered_container:
     ]
 
     # Create three columns for the social media links
-    col1, col2, col3, col4 = st.columns(4)
+    col111111, col222222, col333333, col444444 = st.columns(4)
 
     # Display the social media links with icons in each column
-    with col1:
+    with col111111:
         for link in social_media_links[:1]:
             st.markdown(
                 f'<a href="{link["url"]}" target="_blank" rel="noreferrer">'
@@ -919,7 +918,7 @@ with centered_container:
                 unsafe_allow_html=True,
             )
 
-    with col2:
+    with col222222:
         for link in social_media_links[1:2]:
             st.markdown(
                 f'<a href="{link["url"]}" target="_blank" rel="noreferrer">'
@@ -928,7 +927,7 @@ with centered_container:
                 unsafe_allow_html=True,
             )
 
-    with col3:
+    with col333333:
         for link in social_media_links[2:3]:
             st.markdown(
                 f'<a href="{link["url"]}" target="_blank" rel="noreferrer">'
@@ -937,7 +936,7 @@ with centered_container:
                 unsafe_allow_html=True,
             )
 
-    with col4:
+    with col444444:
         for link in social_media_links[3:]:
             st.markdown(
                 f'<a href="{link["url"]}" target="_blank" rel="noreferrer">'
