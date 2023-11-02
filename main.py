@@ -63,7 +63,7 @@ st.markdown(
 )
 
 # Add a cover image
-background_image = Image.open("background.gif")
+background_image = Image.open("brain.jpg")
 st.image(background_image, use_column_width=True, caption="")
 
 # Create a container for the header
@@ -88,35 +88,44 @@ with header_container:
         st.markdown("<i>Machine Learning, Data and Technology Enthusiast</i>", unsafe_allow_html=True)
         st.write(
             """ I possess a robust grasp of statistical concepts and command a strong understanding of cutting-edge 
-            machine learning algorithms. My expertise extends to a wide array of methodologies, including but not limited 
-            to Logistic Regression, Decision Trees, Random Forests, Support Vector Machines (SVM), K-Nearest Neighbors (KNN),
-             and Naive Bayes. I have effectively applied these algorithms in various independent projects, showcasing my 
-             proficiency in harnessing their capabilities. In my pursuit of enhancing model performance and predictive 
-             accuracy, I have skillfully employed advanced techniques such as ensembling methods and transfer learning. 
-             Additionally, I have leveraged tools like TF-IDF (Term Frequency-Inverse Document Frequency) and word embeddings 
-             to extract meaningful features from data, thereby augmenting the effectiveness of predictive models. 
+            machine learning algorithms, including but not limited to Machine Learning (Supervised and Unsupervised) and Neural Network.
+             I possess both knowledge and hands-on experience, which I've gained through independent work by applying advanced methods 
+             like ensembling, transfer learning, gradient boosting, and cross-validation, with a strong emphasis on comprehensive 
+             data preprocessing, feature engineering, and hyperparameter tuning to maximize and elevate model performance. 
              My commitment to excellence extends to the preprocessing stage, where I prioritize batch processing and 
              feature engineering during feature extraction. This meticulous approach ensures that the input data is 
-             well-prepared to yield optimal results when subjected to machine learning algorithms. Furthermore, 
-             I am driven by a strong interest in delving into Recurrent Neural Networks (RNN) and Transformer-based models. 
-             These cutting-edge deep learning architectures hold significant promise for a wide range of natural language 
-             processing and sequence modeling tasks.
-            
+             well-prepared to yield optimal results when subjected to machine learning algorithms. 
  """
         )
 
         st.write(
-            """ I am excited about the potential of AI and Machine Learning to understand how people behave in the 
-            digital world. During my undergraduate studies, I became intrigued by the idea of using technology to 
-            predict human behavior in online systems. I'm eager to learn more and start my journey in this fascinating 
-            field. As I embark on my master's journey, I am eager to explore the exciting field of AI and Machine Learning, 
-            with a specific interest in applying these technologies to model and predict human behavior in 
-            techno-social systems.
+            """I am profoundly enthusiastic about the transformative potential of AI and Machine Learning in comprehending the 
+            intricate dynamics of Human-Machine Interactions that significantly influence the contemporary digital society. 
+            My undergraduate studies kindled my fascination with the notion of employing technology to forecast human conduct 
+            within online systems, instilling a deep-seated desire to expand my knowledge in this captivating domain. As I set
+             forth on my master's academic voyage, I am poised to delve into the riveting realm of AI and Machine Learning, 
+             driven by a specific focus on the application of these cutting-edge technologies to construct models and predictions
+              that elucidate human behaviors within techno-social systems.
  """
         )
 
+# Interest Zones section
+st.title("Interest Zones")
 
+# Define your interest zones and keywords
+interest_zones = {
+    "Natural Language Processing": ["NLP", "Text Analysis", "Sentiment Analysis", "Word Embedding", "TF-IDF", "Bag of Words", " Name Entity Recognition", "Opinion Mining"],
+    "Deep Learning": ["Neural Networks", "Convolutional Neural Networks", "Recurrent Neural Network"],
+    "Data Visualization": ["Data Insights", "Interactive Charts", "Data Storytelling"],
+}
 
+st.write("Here are some of my key interest zones:")
+
+# Display interest zones and keywords in keyword-like boxes
+for zone, keywords in interest_zones.items():
+    st.subheader(zone)
+    keyword_box = ", ".join([f"`{keyword}`" for keyword in keywords])
+    st.markdown(f"Keywords: {keyword_box}")
 
 
 
