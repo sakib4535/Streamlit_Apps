@@ -114,8 +114,24 @@ st.title("Interest Zones")
 
 # Define your interest zones and keywords
 interest_zones = {
-    "Natural Language Processing": ["NLP", "Text Analysis", "Sentiment Analysis", "Word Embedding", "TF-IDF", "Bag of Words", " Name Entity Recognition", "Opinion Mining"],
-    "Deep Learning": ["Neural Networks", "Convolutional Neural Networks", "Recurrent Neural Network"],
+    "Communication Data Science": [
+            "Social Media Analytics",
+            "Text Data Mining",
+            "Media Content Analysis",
+            "Audience Segmentation",
+            "Network Analysis",
+            "Topic Modeling",
+            "Sentiment Analysis on Social Media",
+        ],
+    "Natural Language Processing": ["Word Embedding", "Sentiment Analysis", "", "Bag of Words", "Name Entity Recognition(NER)", "Opinion Mining", "WordCloud", "Emotion Recognition"],
+    "Machine and Deep Learning": ["""Ensemble Methods and Learning (LightLGB, XGBoost, AdaBoost, GBM), 
+                                  Neural Networks (CNN, RNN, LSTM, Transformers),
+                                  Supervised Learning (Classification and Regression),
+                                  Unsupervised Learning (Clustering),
+                                  Feature Engineering,
+                                  Overfitting and Regularization,
+                                  Model Evaluation and Validation"""],
+
     "Data Visualization": ["Data Insights", "Interactive Charts", "Data Storytelling"],
 }
 
