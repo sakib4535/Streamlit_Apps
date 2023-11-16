@@ -99,8 +99,10 @@ with header_container:
         )
 
         st.write(
-            """I am profoundly enthusiastic about the transformative potential of AI and Machine Learning in comprehending the 
-            intricate dynamics of Human-Machine Interactions that significantly influence the contemporary digital society. 
+            """I am profoundly enthusiastic about the Understanding how information propagates through a network can help identify key 
+            influencers or nodes affecting opinions, behavior, or decisions. Ethically, this could be used to promote positive behaviors 
+            (such as healthy habits, altruism) or to identify harmful misinformation for mitigation.
+            
             My undergraduate studies kindled my fascination with the notion of employing technology to forecast human conduct 
             within online systems, instilling a deep-seated desire to expand my knowledge in this captivating domain. As I set
              forth on my master's academic voyage, I am poised to delve into the riveting realm of AI and Machine Learning, 
