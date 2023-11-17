@@ -105,7 +105,7 @@ with header_container:
             I am profoundly enthusiastic about the intrinsic processes of how information propagates through a network that can help identify key 
             influencers or nodes affecting opinions, behavior, or decisions. Ethically harnessed, this understanding becomes an operational cornerstone for catalyzing positive behavioral 
             shifts—ranging from the cultivation of health-conscious routines and altruistic tendencies to the fortification of cybersecurity measures. Moreover, its application extends to the discernment of vulnerabilities within societal cohorts or individual entities,
-            as well as the systematic identification and mitigation of detrimental misinformation within virtual domains. . My undergraduate studies, focused on the methodological and theoretical aspects of 
+            as well as the systematic identification and mitigation of detrimental misinformation within virtual domains. My undergraduate studies, focused on the methodological and theoretical aspects of 
             Digital Media, Internet and Social Netowrk Analysis kindled my fascination with the notion of employing technology to forecast human conduct 
             within online systems, instilling a deep-seated desire to expand my knowledge in this captivating domain.
  """
