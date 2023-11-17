@@ -89,6 +89,8 @@ with header_container:
         st.write(
             """ I possess a robust grasp of statistical concepts and command a strong understanding of cutting-edge 
             machine learning algorithms, including but not limited to Machine Learning (Supervised and Unsupervised) and Neural Network.
+             Moreover, as an independent Python programmer and developer, I've honed my skills through self-initiated projects. This hands-on 
+             experience allows me to leverage Python's diverse libraries and tools proficiently, enhancing my capabilities in data analysis and model development.
              I possess both knowledge and hands-on experience, which I've gained through independent work by applying advanced methods 
              like ensembling, transfer learning, gradient boosting, and cross-validation, with a strong emphasis on comprehensive 
              data preprocessing, feature engineering, and hyperparameter tuning to maximize and elevate model performance. 
@@ -99,15 +101,13 @@ with header_container:
         )
 
         st.write(
-            """I am profoundly enthusiastic about the Understanding how information propagates through a network can help identify key 
-            influencers or nodes affecting opinions, behavior, or decisions. Ethically, this could be used to promote positive behaviors 
-            (such as healthy habits, altruism) or to identify harmful misinformation for mitigation.
-            
-            My undergraduate studies kindled my fascination with the notion of employing technology to forecast human conduct 
-            within online systems, instilling a deep-seated desire to expand my knowledge in this captivating domain. As I set
-             forth on my master's academic voyage, I am poised to delve into the riveting realm of AI and Machine Learning, 
-             driven by a specific focus on the application of these cutting-edge technologies to construct models and predictions
-              that elucidate human behaviors within techno-social systems.
+            """
+            I am profoundly enthusiastic about the intrinsic processes of how information propagates through a network that can help identify key 
+            influencers or nodes affecting opinions, behavior, or decisions. Ethically harnessed, this understanding becomes an operational cornerstone for catalyzing positive behavioral 
+            shifts—ranging from the cultivation of health-conscious routines and altruistic tendencies to the fortification of cybersecurity measures. Moreover, its application extends to the discernment of vulnerabilities within societal cohorts or individual entities,
+            as well as the systematic identification and mitigation of detrimental misinformation within virtual domains. . My undergraduate studies, focused on the methodological and theoretical aspects of 
+            Digital Media, Internet and Social Netowrk Analysis kindled my fascination with the notion of employing technology to forecast human conduct 
+            within online systems, instilling a deep-seated desire to expand my knowledge in this captivating domain.
  """
         )
 
@@ -118,16 +118,19 @@ st.title("Interest Zones")
 interest_zones = {
     "Communication Data Science": [
             "Social Media Analytics",
-            "Text Data Mining",
+            "Text/Opinion Mining",
             "Media Content Analysis",
-            "Audience Segmentation",
+            "Segmentation Analytics",
             "Network Analysis",
-            "Topic Modeling",
-            "Sentiment Analysis on Social Media",
+            "Sentiment Analysis"
         ],
-    "Natural Language Processing": ["Word Embedding", "Sentiment Analysis", "", "Bag of Words", "Name Entity Recognition(NER)", "Opinion Mining", "WordCloud", "Emotion Recognition"],
-    "Machine and Deep Learning": ["""Ensemble Methods and Learning (LightLGB, XGBoost, AdaBoost, GBM), 
-                                  Neural Networks (CNN, RNN, LSTM, Transformers),
+
+    "Natural Language Processing": ["Word Embedding", "TF-IDF (Term Frequency-Inverse Document Frequency)", "Vectorization", "Bag of Words", "Name Entity Recognition(NER)", "Stemming/Lemmatization", "Syntactic Parsing", "Dependency Parsing",  "Topic Modeling", "Document-Term Matrix", "Text Classification", "Performance Metrics"],
+    "Machine and Deep Learning": ["""Ensemble Methods and Learning (LightLGB, XGBoost, AdaBoost, GBM, Bagging, Boosting), 
+                                  Neural Networks (CNN, RNN, LSTM),
+                                  Transfer Learning,
+                                  Sequence Labeling,
+                                  Attention Mechanisms,
                                   Supervised Learning (Classification and Regression),
                                   Unsupervised Learning (Clustering),
                                   Feature Engineering,
@@ -144,7 +147,6 @@ for zone, keywords in interest_zones.items():
     st.subheader(zone)
     keyword_box = ", ".join([f"`{keyword}`" for keyword in keywords])
     st.markdown(f"Keywords: {keyword_box}")
-
 
 
 
@@ -308,14 +310,15 @@ left_container, right_container = st.columns(2)
 # Left Side (with bullet points)
 with left_container:
     skills = [
-        {"name": "Machine Learning", "icon": "🤖"},
+        {"name": "Machine Learning (Supervised & Unsupervised)", "icon": "🤖"},
         {"name": "Natural Language Processing", "icon": "📚"},
-        {"name": "Data Structures and Algorithms", "icon": "🧮"},
-        {"name": "Data Manipulation", "icon": "🔍"},
+        {"name": "Large Language Models (LLM)", "icon": "🧮"},
+        {"name": "Time Series Analysis", "icon": "⏰ "},
+        {"name": "Data Manipulation & Preprocessing", "icon": "🔍"},
         {"name": "Web Scraping", "icon": "🌐"},
         {"name": "Data Analysis", "icon": "📊"},
         {"name": "Python Programming", "icon": "🐍"},
-        {"name": "Database Interaction", "icon": "📂"},
+        {"name": "Data Structures and Algorithms", "icon": "📂"},
         {"name": "Feature Engineering", "icon": "🛠️"},
         {"name": "Exploratory Analysis", "icon": "🔍"},
         {"name": "Data Visualization", "icon": "📈"},
