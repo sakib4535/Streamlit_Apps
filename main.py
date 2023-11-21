@@ -74,9 +74,9 @@ with header_container:
     # Profile picture on the left
     col1, col2 = st.columns([1, 4])
     with col1:
-        profile_image = Image.open("sakib.jpg")
+        profile_image = Image.open("sakib.jpeg")
 
-        st.image(profile_image, width=210)
+        st.image(profile_image, width=220)
 
 
     # About Me section on the right
@@ -88,28 +88,17 @@ with header_container:
         st.markdown("<i>Machine Learning, Data and Technology Enthusiast</i>", unsafe_allow_html=True)
         st.write(
             """ I possess a robust grasp of statistical concepts and command a strong understanding of cutting-edge 
-            machine learning algorithms, including but not limited to Machine Learning (Supervised and Unsupervised) and Neural Network.
+            machine learning algorithms, including but not limited to Machine Learning (Supervised and Unsupervised).
              Moreover, as an independent Python programmer and developer, I've honed my skills through self-initiated projects. This hands-on 
              experience allows me to leverage Python's diverse libraries and tools proficiently, enhancing my capabilities in data analysis and model development.
              I possess both knowledge and hands-on experience, which I've gained through independent work by applying advanced methods 
-             like ensembling, transfer learning, gradient boosting, and cross-validation, with a strong emphasis on comprehensive 
+             like ensembling learning, transfer learning, neural network and deep learning with a strong emphasis on comprehensive 
              data preprocessing, feature engineering, and hyperparameter tuning to maximize and elevate model performance. 
-             My commitment to excellence extends to the preprocessing stage, where I prioritize batch processing and 
-             feature engineering during feature extraction. This meticulous approach ensures that the input data is 
-             well-prepared to yield optimal results when subjected to machine learning algorithms. 
+             My commitment to excellence extends to the field of Data Science and Big Data Technology, prioritizing efficient computational processes. 
  """
         )
 
-        st.write(
-            """
-            I am profoundly enthusiastic about the intrinsic processes of how information propagates through a network that can help identify key 
-            influencers or nodes affecting opinions, behavior, or decisions. Ethically harnessed, this understanding becomes an operational cornerstone for catalyzing positive behavioral 
-            shifts—ranging from the cultivation of health-conscious routines and altruistic tendencies to the fortification of cybersecurity measures. Moreover, its application extends to the discernment of vulnerabilities within societal cohorts or individual entities,
-            as well as the systematic identification and mitigation of detrimental misinformation within virtual domains. My undergraduate studies, focused on the methodological and theoretical aspects of 
-            Digital Media, Internet and Social Netowrk Analysis kindled my fascination with the notion of employing technology to forecast human conduct 
-            within online systems, instilling a deep-seated desire to expand my knowledge in this captivating domain.
- """
-        )
+
 
 # Interest Zones section
 st.title("Interest Zones")
@@ -226,6 +215,17 @@ if st.button("Click Me for INSIGHTS!", key="click_me_button", help="Click to sho
     )
 
     st.title("My Perspectives on Using Communication Data Science, Machine Learning and Computations")
+
+    st.write(
+        """
+        I am profoundly enthusiastic about the intrinsic processes of how information propagates through a network that can help identify key 
+        influencers or nodes affecting opinions, behavior, or decisions. Ethically harnessed, this understanding becomes an operational cornerstone for catalyzing positive behavioral 
+        shifts—ranging from the cultivation of health-conscious routines and altruistic tendencies to the fortification of cybersecurity measures. Moreover, its application extends to the discernment of vulnerabilities within societal cohorts or individual entities,
+        as well as the systematic identification and mitigation of detrimental misinformation within virtual domains. My undergraduate studies, focused on the methodological and theoretical aspects of 
+        Digital Media, Internet and Social Netowrk Analysis kindled my fascination with the notion of employing technology to forecast human conduct 
+        within online systems, instilling a deep-seated desire to expand my knowledge in this captivating domain.
+"""
+    )
 
     st.write("1. **Enhancing Decision-Making:**:  In today's interconnected world, decisions made by individuals, businesses, "
              "and governments are increasingly influenced by digital communication. Communication Data Science enables "
@@ -829,65 +829,6 @@ with project_container:
         unsafe_allow_html=True,
     )
 
-
-# Add some spacing between the previous section and the text container
-st.write(" ")  # Adds a blank line for separation
-st.write(" ")
-
-# Define a CSS style for the video section
-video_style = """
-    text-align: center;
-    padding: 20px;
-    background-color: #f0f0f0; /* Background color for the video section */
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px #888888; /* Add a box shadow for a beautiful design */
-"""
-
-import streamlit as st
-
-# Define a CSS style for the text container
-text_container_style = """
-    background-color: #56bdcf;
-    border: 2px solid #b8e05b;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px rgba(167, 123, 123, 0.1);
-    padding: 20px;
-    text-align: left;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-"""
-
-# Apply the text container style
-st.markdown(f"""
-    <div style='{text_container_style}'>
-        <h2 style='color: #333;'>Experiencing the World of Data!</h2>
-        <p style='font-size: 16px;'>
-            In the world of technology and programming, I embark on a journey through a diverse spectrum of topics. Algorithm analysis equips me with the precision to measure code efficiency, while the art of graphing transforms raw data into captivating visuals. Application deployment becomes my conduit to reaching end users seamlessly. Within the heart of this technological landscape, machine learning algorithms emerge as the crown jewels, bestowing my applications with predictive prowess. Amidst this exciting landscape, I find joy in my work, encapsulated as 'Fun with Work,' a guiding compass through the intricate tapestry of daily endeavors.
-        </p>
-    </div>
-""", unsafe_allow_html=True)
-
-
-
-# List of video files
-video_files = [
-    "algorithm.mp4",
-    "simulation.mp4",
-    "nasa.mp4",
-    "game_of_life_simulation.mp4",
-    "my_app.mp4",
-
-    # Add more video files as needed
-]
-
-# Select a video to display
-selected_video = st.selectbox("Select a video to play", video_files)
-
-# Display the selected video
-st.video(selected_video, format="video/mp4")
-
-
-# Close the video section
-st.markdown("</div>", unsafe_allow_html=True)
 
 
 
