@@ -543,186 +543,155 @@ st.markdown(f"<div style='{box_style}'>"
 
 # Projects
 # Projects
-st.header("Projects")
-st.text("Here are some of the projects I've worked on:")
+
+
+# Custom CSS for styling
+st.markdown(
+    """
+    <style>
+    .header-text {
+        font-size: 36px;
+        color: #3366cc;
+        text-align: center;
+        padding: 20px 0;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    .projects-text {
+        font-size: 18px;
+        color: #444;
+        text-align: center;
+        padding: 10px 0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Display header and text
+st.markdown('<p class="header-text">Course Works / Independent Projects</p>', unsafe_allow_html=True)
+st.markdown('<p class="projects-text">Here are some of the projects I have worked on during my courseworks with real-life data:</p>', unsafe_allow_html=True)
+
 
 # Create a container for the project cards
 project_container = st.container()
 
-# Project 1: Game Data Analytics using Ratings, Playtime, Suggestions
-with project_container:
+
+# Function to display the detailed project description inside a markdown container
+def display_detailed_description():
     st.subheader("*** Game Data Analytics using Ratings, Playtime, Suggestions")
 
-    # Create a single row to display the image and description side by side
-    col111, col222 = st.columns([1, 2])  # Adjust the number of columns as needed
+    # Description content inside a markdown container
+    description_content = """
+    <div style="
+        border: 2px solid #3366cc;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: left;
+        margin-left: 40px;  /* Adjust the margin for right shift */
+    ">
+    <ul>
+        <li>The project aims to gain insights into the factors influencing game ratings.</li>
+        <li>It creates predictive models using machine-learning approaches.</li>
+        <li>It combines the RAWG Video Games Database API with a Python application to collect data about video games.</li>
+        <li>Two models, Decision Trees, and Random Forests, are trained on this data.</li>
+        <li>The models uncover the relationships between specific features and game ratings.</li>
+        <li>Model performance is assessed using Mean Squared Error (MSE) and R-squared (R2) scores.</li>
+        <li>Feature importance analysis is conducted to identify influential factors.</li>
+        <li>Regression analysis results, including R-squared and Adj. R-squared values, are presented.</li>
+    </ul>
+    </div>
+    """
+    st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
 
-    # Display the image on the left
-    with col111:
+    # Display the images in columns
+    col1, col2 = st.columns(2)  # Adjust the number of columns as needed
+
+    with col1:
         st.image("relations-RF.png", width=400, caption="Sentiment Analysis Example")
+        # Add more images with st.image as needed
 
-    # Create a box for the project description and shift it to the right
-    with col222:
-        # Apply CSS styles to create a box and right shift it
-        st.markdown(
-            """
-            <div style="
-                border: 2px solid #3366cc;
-                border-radius: 10px;
-                padding: 20px;
-                text-align: left;
-                margin-left: 40px;  /* Adjust the margin for right shift */
-            ">
-            <ul>
-                <li>The project aims to gain insights into the factors influencing game ratings.</li>
-                <li>It creates predictive models using machine-learning approaches.</li>
-                <li>It combines the RAWG Video Games Database API with a Python application to collect data about video games.</li>
-                <li>Two models, Decision Trees, and Random Forests, are trained on this data.</li>
-                <li>The models uncover the relationships between specific features and game ratings.</li>
-                <li>Model performance is assessed using Mean Squared Error (MSE) and R-squared (R2) scores.</li>
-                <li>Feature importance analysis is conducted to identify influential factors.</li>
-                <li>Regression analysis results, including R-squared and Adj. R-squared values, are presented.</li>
-            </ul>
-            """,
-            unsafe_allow_html=True,  # Allow HTML tags for styling
-        )
+    with col2:
+        # Add more images or graphs in the second column
+        pass  # Use st.image to add images or st.pyplot to display graphs
 
-        # Keywords section with separate black boxes and blue-colored text for each keyword
-        keywords = [
-            "Game Ratings",
-            "Predictive Models",
-            "Machine Learning",
-            "RAWG API",
-            "Decision Trees",
-            "Random Forests",
-            "Model Performance",
-            "Feature Importance",
-            "Regression Analysis",
-        ]
+# Collapsible section for the project
+with st.expander("Project 1: Game Data Analytics using Ratings, Playtime, Suggestions"):
+    st.write("Short Description: The project aims to analyze game ratings using machine learning.")
+    st.write("Click the button below to view detailed project description and images.")
+    if st.button("Show Detailed Description 1", key="detailed_description_1"):
+        display_detailed_description()
 
-        keyword_boxes = [
-            f'<span style="background-color: #000; color: #3366cc; padding: 2px 5px; border-radius: 3px; margin-right: 2px;">{keyword}</span>'
-            for keyword in keywords
-        ]
 
-        keywords_html = " ".join(keyword_boxes)
 
-        # Keywords with right shift
-        st.markdown(
-            f"""
-            <div style="text-align: right; margin-right: 20px;">  <!-- Adjust the margin for right shift -->
-                <strong>Keywords:</strong> {keywords_html}
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-# Project 2: Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns
-with project_container:
+# Function to display detailed description of Project 2
+def display_detailed_description_project_2():
     st.subheader("*** Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns")
 
-    # Create a single row to display the left and right columns
-    left_col, right_col = st.columns([1, 2])  # Adjust the column proportions as needed
+    # Description content inside a markdown container
+    description_content = """
+    <div style="
+        border: 2px solid #3366cc;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: left;
+        margin-left: 40px;  /* Adjust the margin for right shift */
+    ">
+    <ul>
+        <li>Description: In today's fast-paced digital world, laptops have become an indispensable tool for both work and leisure. 
+        With an overwhelming variety of options available in the market, understanding the factors that determine laptop prices is crucial 
+        for making informed purchasing decisions.</li>
+        <li>This project delves into the world of laptop pricing, leveraging data analysis and machine learning techniques to uncover 
+        the key factors that influence laptop prices.</li>
+        <li>By analyzing a comprehensive dataset of laptop specifications and prices, this project aims to provide valuable insights 
+        into the pricing patterns of laptops. Through the utilization of regression models, particularly Random Forest Regression, 
+        we explore the relationships between various laptop features and their impact on pricing. The project's findings empower consumers 
+        to make informed decisions based on their budget, performance requirements, and desired features.</li>
+        <li>Furthermore, feature importance analysis is conducted to identify the most influential factors driving laptop prices. 
+        This analysis allows us to uncover which features have the greatest impact on pricing decisions. The results are visualized through 
+        informative graphs, highlighting the relative importance of each feature and enabling users to prioritize their preferences 
+        based on budget and requirements.</li>
+    </ul>
+    <img src="project02.png" alt="Graph 1" style="width: 400px; margin-top: 20px;">
+    <img src="laptop.png" alt="Graph 2" style="width: 400px; margin-top: 20px;">
+    </div>
+    """
+    st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
 
-    # Left column for graphs
-    with left_col:
-            st.image("project02.png", width=400, caption="Graph 1")
-            st.image("laptop.png", width=400, caption="Graph 2")
+# Collapsible section for Project 2
+# Collapsible section for Project 2
+with st.expander("Project 2: Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns"):
+    st.write("Short Description: Understanding factors influencing laptop prices.")
+    st.write("Click the button below to view detailed project description and images.")
+    if st.button("Show Detailed Description 2", key="detailed_description_2"):
+        display_detailed_description_project_2()
 
-    # Right column for project description and keywords
-    with right_col:
-        # Project description
-        st.markdown(
-            """
-            <div style="
-                border: 2px solid #3366cc;
-                border-radius: 10px;
-                padding: 20px;
-                text-align: left;
-                margin-left: 40px;  /* Adjust the margin for right shift */
-            ">
-            <ul>
-            <li> Description: In today's fast-paced digital world, laptops have become an indispensable tool for 
-              both work and leisure. With an overwhelming variety of options available in the market, understanding the factors 
-              that determine laptop prices is crucial for making informed purchasing decisions. </li>
-             <li> This project delves into the world 
-              of laptop pricing, leveraging data analysis and machine learning techniques to uncover the key factors that influence 
-              laptop prices.</li>
-              <li> By analyzing a comprehensive dataset of laptop specifications and prices, this project aims to provide valuable 
-              insights into the pricing patterns of laptops. Through the utilization of regression models, particularly Random 
-              Forest Regression, we explore the relationships between various laptop features and their impact on pricing. 
-              The project's findings empower consumers to make informed decisions based on their budget, performance requirements, 
-              and desired features. </li>
+# Function to display detailed description of Project 3
+def display_detailed_description_project_3():
+    st.subheader("""*** Looking Through a National News Article Texts to learn about the name 'Joe Biden' !***""")
 
-              <li> Furthermore, feature importance analysis is conducted to identify the most influential factors driving laptop prices. 
-              This analysis allows us to uncover which features have the greatest impact on pricing decisions. The results are 
-              visualized through informative graphs, highlighting the relative importance of each feature and enabling users to
-              prioritize their preferences based on budget and requirements. </li>
-            """,
-            unsafe_allow_html=True,  # Allow HTML tags for styling
-        )
+    # Description content inside a markdown container
+    description_content = """
+    <div style="
+        border: 2px solid #3366cc;
+        border-radius: 10px;
+        padding: 18px;
+        text-align: left;
+        margin-left: auto; /* Auto margin for center alignment */
+        margin-right: auto; /* Auto margin for center alignment */
+    ">
+    Description: The aim of this project was to leverage Natural Language Processing (NLP) techniques to analyze a large corpus 
+    of national news articles to track and understand the mentions of the name 'Joe Biden.' The project incorporated various NLP 
+    methods, including Word Cloud generation, handling stop words, label encoding, and creating a Bag of Words representation.
+    </div>
+    """
+    st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
 
-        # Keywords section with separate black boxes and blue-colored text for each keyword
-        keywords = [
-            "Laptop Prices",
-            "Pricing Patterns",
-            "Data Analysis",
-            "Machine Learning",
-            "Regression Models",
-            "Feature Importance",
-            "Budget",
-            "Performance Requirements",
-        ]
-
-        keyword_boxes = [
-            f'<span style="background-color: #000; color: #3366cc; padding: 2px 5px; border-radius: 3px; margin-right: 5px;">{keyword}</span>'
-            for keyword in keywords
-        ]
-
-        keywords_html = " ".join(keyword_boxes)
-
-        # Keywords with right shift
-        st.markdown(
-            f"""
-            <div style="text-align: right; margin-right: 20px;">  <!-- Adjust the margin for right shift -->
-                <strong>Keywords:</strong> {keywords_html}
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-# Project 3:
-with project_container:
-    st.subheader("""*** Looking Through a National News Article Texts to learn about the name 'Joe Biden' !""")
-    # Create a box for the project description
-    st.markdown(
-        """
-        <div style="
-            border: 2px solid #3366cc;
-            border-radius: 10px;
-            padding: 18px;
-            text-align: left;
-            margin-left: auto; /* Auto margin for center alignment */
-            margin-right: auto; /* Auto margin for center alignment */
-        ">
-        Description: The aim of this project was to leverage Natural Language Processing (NLP) techniques to analyze a 
-        large corpus of national news articles to track and understand the mentions of the name 'Joe Biden.' The project 
-        incorporated various NLP methods, including Word Cloud generation, handling stop words, label encoding, and creating a
-         Bag of Words representation.
-        </div>
-        """,
-        unsafe_allow_html=True,  # Allow HTML tags for styling
-    )
-
-    # Create a single row to display the images horizontally
-    col1111, col2222, col3333 = st.columns(3)  # Adjust the number of columns as needed
-
-    # Display the images horizontally within the same container
-    with col1111:
-        st.image("g20.png", width=400, caption="Sentiment Analysis Example")
-    with col2222:
-        st.image("g20-1.png", width=400, caption="Image Classification Example")
-    with col3333:
-        st.image("g20-3.PNG", width=400, caption="Image Classification Example")
+    # Display the images horizontally
+    st.image("g20.png", width=400, caption="Sentiment Analysis Example")
+    st.image("g20-1.png", width=400, caption="Image Classification Example")
+    st.image("g20-3.PNG", width=400, caption="Image Classification Example")
 
     # Keywords section for Project 3
     keywords_project3 = [
@@ -753,51 +722,52 @@ with project_container:
         unsafe_allow_html=True,
     )
 
-
-
+# Collapsible section for Project 3
+with st.expander("Project 3: Looking Through a National News Article Texts to learn about the name 'Joe Biden'"):
+    st.write("Short Description: Analyzing national news articles for 'Joe Biden' mentions.")
+    st.write("Click the button below to view detailed project description and images.")
+    if st.button("Show Detailed Description 3", key="detailed_description_3"):
+        display_detailed_description_project_3()
 
 # Project 4: GamersHub: Text and Opinion Mining of Reddit Comments
-with project_container:
+# Function to display detailed description of Project 4
+def display_detailed_description_project_4():
     st.subheader("*** GamersHub: Text and Opinion Mining of Reddit Comments")
 
+    # Description content inside a markdown container
+    description_content = """
+    <div style="
+        border: 2px solid #3366cc;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: left;
+        margin-left: auto; /* Auto margin for center alignment */
+        margin-right: auto; /* Auto margin for center alignment */
+    ">
+    Description: GamersHub: Text and Opinion Mining of Reddit Comments
+    In the initial stages, the dataset of Reddit comments is likely collected and preprocessed. This entails tasks such as data cleaning,
+    removal of irrelevant symbols, and potentially splitting the data into training and testing sets using train_test_split from
+    sklearn.model_selection. In this case, the CSV file contains 21,821 rows and 3 columns. Each row in the CSV file likely represents a
+    separate record or data point, while each of the 3 columns likely holds different attributes, variables, or fields associated with the data.
+    To convert the text data into a format suitable for analysis, the project employs the CountVectorizer and TfidfVectorizer from
+    sklearn.feature_extraction.text. These techniques transform the comments into numerical vectors, enabling machine learning algorithms
+    to process and analyze the text data effectively.
+    For a deeper understanding of the underlying themes within the comments, the project utilizes LatentDirichletAllocation from
+    sklearn.decomposition to perform topic modeling. This aids in uncovering latent topics or patterns within the discussions, contributing
+    valuable insights into prevalent themes.
+    </div>
+    """
+    st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
 
-    # Create a box for the project description
-    st.markdown(
-        """
-        <div style="
-            border: 2px solid #3366cc;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: left;
-            margin-left: auto; /* Auto margin for center alignment */
-            margin-right: auto; /* Auto margin for center alignment */
-        ">
-        Description: GamersHub: Text and Opinion Mining of Reddit Comments
-        In the initial stages, the dataset of Reddit comments is likely collected and preprocessed. This entails tasks such as data cleaning,
-        removal of irrelevant symbols, and potentially splitting the data into training and testing sets using train_test_split from
-        sklearn.model_selection. In this case, the CSV file contains 21,821 rows and 3 columns. Each row in the CSV file likely represents a
-        separate record or data point, while each of the 3 columns likely holds different attributes, variables, or fields associated with the data.
-        To convert the text data into a format suitable for analysis, the project employs the CountVectorizer and TfidfVectorizer from
-        sklearn.feature_extraction.text. These techniques transform the comments into numerical vectors, enabling machine learning algorithms
-        to process and analyze the text data effectively.
-        For a deeper understanding of the underlying themes within the comments, the project utilizes LatentDirichletAllocation from
-        sklearn.decomposition to perform topic modeling. This aids in uncovering latent topics or patterns within the discussions, contributing
-        valuable insights into prevalent themes.
-        </div>
-        """,
-        unsafe_allow_html=True,  # Allow HTML tags for styling
-    )
-
-    # Create a single row to display the images horizontally
-    col11111, col22222, col33333 = st.columns(3)  # Adjust the number of columns as needed
-
-    # Display the images horizontally within the same container
-    with col11111:
+    # Display the images in columns
+    col1, col2, col3 = st.columns(3)  # Adjust the number of columns as needed
+    with col1:
         st.image("reddit2.png", width=400, caption="Image 1")
-    with col22222:
+    with col2:
         st.image("reddit1.png", width=400, caption="Image 2")
-    with col33333:
+    with col3:
         st.image("reddit3.png", width=400, caption="Image 3")
+
 
     # Keywords section for Project 4
     keywords_project4 = [
@@ -829,8 +799,68 @@ with project_container:
         unsafe_allow_html=True,
     )
 
+# Collapsible section for Project 4
+with st.expander("Project 4: GamersHub: Text and Opinion Mining of Reddit Comments"):
+    st.write("Short Description: Text and Opinion Mining of Reddit Comments.")
+    st.write("Click the button below to view detailed project description and images.")
+    if st.button("Show Detailed Description 4", key="detailed_description_4"):
+        display_detailed_description_project_4()
 
 
+
+
+# Function to display the detailed project description inside a markdown container
+import streamlit as st
+
+
+def display_detailed_description_project_5():
+    st.subheader(
+        "*** Multi-Label Text Sentiment Classification and Word Embedding Analysis for the Review of 'Thread' Social Media Application")
+
+    # Description content inside a markdown container
+    description_content = """
+    <div style="
+        border: 2px solid #3366cc;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: left;
+        margin-left: auto; /* Auto margin for center alignment */
+        margin-right: auto; /* Auto margin for center alignment */
+    ">
+    Description: Multi-Label Text Sentiment Classification and Word Embedding Analysis for the Review of 'Thread' Social Media Application
+    <ul>
+        <li>📢 Comprehensive Dataset: With over 37,000 reviews, our meticulously curated dataset captures a substantial and representative sample of user feedback from both Android and iOS platforms, 
+        offering a comprehensive view of the "Thread" app's reception.</li>
+        <li>💬 Label-wise accuracies are impressive, with Positive Sentiment at 88.25%, Negative Sentiment at 98.20%, and 
+        Neutral Sentiment at 91.00%. The mean accuracy of 92.48% reflects the model's strong performance across all categories.</li>
+        <li>
+            <img src="your_image_path_here.png" alt="Your Image" style="width: 300px; margin-top: 10px;">
+            <p style="font-style: italic; font-size: 12px; text-align: center;">Image 1: Your Image Caption</p>
+        </li>
+        <!-- Include more list items or images as needed -->
+    </ul>
+
+    <!-- Keywords section -->
+    <div style="text-align: center; margin-top: 20px;">
+        <strong>Keywords:</strong>
+        <span style="background-color: #000; color: #3366cc; padding: 2px 3px; border-radius: 3px; margin-right: 5px;">Keyword1</span>
+        <span style="background-color: #000; color: #3366cc; padding: 2px 3px; border-radius: 3px; margin-right: 5px;">Keyword2</span>
+        <!-- Add more keywords in a similar format -->
+    </div>
+
+    </div>
+    """
+    st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
+
+
+# Collapsible section for Project 5
+with st.expander(
+        "Project 5: Multi-Label Text Sentiment Classification and Word Embedding Analysis for the Review of 'Thread' Social Media Application"):
+    st.write(
+        "Short Description: Multi-label sentiment analysis and word embedding analysis for a social media application.")
+    st.write("Click the button below to view detailed project description and analysis.")
+    if st.button("Show Detailed Description 5", key="detailed_description_5"):
+        display_detailed_description_project_5()
 
 # You can add more projects and sections as needed
 
