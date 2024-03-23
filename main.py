@@ -140,21 +140,7 @@ for zone, keywords in interest_zones.items():
 
 
 
-
 ################################
-
-# Custom CSS for the button style
-button_style = """
-    background-color: #ff5733; /* Change the background color */
-    color: white; /* Change the text color */
-    padding: 12px 24px; /* Adjust padding as needed */
-    border: none;
-    border-radius: 10px; /* Change the border radius */
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-"""
-
-
 
 # CSS for the button style
 button_style = """
@@ -579,8 +565,10 @@ project_container = st.container()
 
 
 # Function to display the detailed project description inside a markdown container
+import streamlit as st
+
 def display_detailed_description():
-    st.subheader("*** Game Data Analytics using Ratings, Playtime, Suggestions")
+    st.subheader("***Game Data Analytics using Ratings, Playtime, Suggestions***")
 
     # Description content inside a markdown container
     description_content = """
@@ -616,18 +604,20 @@ def display_detailed_description():
         # Add more images or graphs in the second column
         pass  # Use st.image to add images or st.pyplot to display graphs
 
+    # GitHub Link
+    st.subheader("GitHub Link:")
+    st.markdown("[GitHub Repository](https://github.com/your-username/your-repository)", unsafe_allow_html=True)
+
 # Collapsible section for the project
 with st.expander("Project 1: Game Data Analytics using Ratings, Playtime, Suggestions"):
     st.write("Short Description: The project aims to analyze game ratings using machine learning.")
-    st.write("Click the button below to view detailed project description and images.")
-    if st.button("Show Detailed Description 1", key="detailed_description_1"):
-        display_detailed_description()
+    display_detailed_description()
 
 
 
 # Function to display detailed description of Project 2
 def display_detailed_description_project_2():
-    st.subheader("*** Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns")
+    st.subheader("***Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns***")
 
     # Description content inside a markdown container
     description_content = """
@@ -659,17 +649,19 @@ def display_detailed_description_project_2():
     """
     st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
 
-# Collapsible section for Project 2
+    # GitHub Link
+    st.subheader("GitHub Link:")
+    st.markdown("[GitHub Repository](https://github.com/your-username/your-repository)", unsafe_allow_html=True)
+
 # Collapsible section for Project 2
 with st.expander("Project 2: Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns"):
     st.write("Short Description: Understanding factors influencing laptop prices.")
-    st.write("Click the button below to view detailed project description and images.")
-    if st.button("Show Detailed Description 2", key="detailed_description_2"):
-        display_detailed_description_project_2()
+    display_detailed_description_project_2()
+
 
 # Function to display detailed description of Project 3
 def display_detailed_description_project_3():
-    st.subheader("""*** Looking Through a National News Article Texts to learn about the name 'Joe Biden' !***""")
+    st.subheader("""***Looking Through a National News Article Texts to learn about the name 'Joe Biden' !***""")
 
     # Description content inside a markdown container
     description_content = """
@@ -722,17 +714,20 @@ def display_detailed_description_project_3():
         unsafe_allow_html=True,
     )
 
+    # GitHub Link
+    st.subheader("GitHub Link:")
+    st.markdown("[GitHub Repository](https://github.com/your-username/your-repository)", unsafe_allow_html=True)
+
 # Collapsible section for Project 3
 with st.expander("Project 3: Looking Through a National News Article Texts to learn about the name 'Joe Biden'"):
     st.write("Short Description: Analyzing national news articles for 'Joe Biden' mentions.")
-    st.write("Click the button below to view detailed project description and images.")
-    if st.button("Show Detailed Description 3", key="detailed_description_3"):
-        display_detailed_description_project_3()
+    display_detailed_description_project_3()
+
 
 # Project 4: GamersHub: Text and Opinion Mining of Reddit Comments
-# Function to display detailed description of Project 4
-def display_detailed_description_project_4():
-    st.subheader("*** GamersHub: Text and Opinion Mining of Reddit Comments")
+
+def display_detailed_description_project():
+    st.subheader("***GamersHub: Text and Opinion Mining of Reddit Comments***")
 
     # Description content inside a markdown container
     description_content = """
@@ -741,36 +736,39 @@ def display_detailed_description_project_4():
         border-radius: 10px;
         padding: 20px;
         text-align: left;
-        margin-left: auto; /* Auto margin for center alignment */
-        margin-right: auto; /* Auto margin for center alignment */
+        margin: 20px auto; /* Auto margin for center alignment */
+        max-width: 800px; /* Limiting width for better readability */
     ">
     Description: GamersHub: Text and Opinion Mining of Reddit Comments
+
     In the initial stages, the dataset of Reddit comments is likely collected and preprocessed. This entails tasks such as data cleaning,
-    removal of irrelevant symbols, and potentially splitting the data into training and testing sets using train_test_split from
-    sklearn.model_selection. In this case, the CSV file contains 21,821 rows and 3 columns. Each row in the CSV file likely represents a
+    removal of irrelevant symbols, and potentially splitting the data into training and testing sets using `train_test_split` from
+    `sklearn.model_selection`. In this case, the CSV file contains 21,821 rows and 3 columns. Each row in the CSV file likely represents a
     separate record or data point, while each of the 3 columns likely holds different attributes, variables, or fields associated with the data.
-    To convert the text data into a format suitable for analysis, the project employs the CountVectorizer and TfidfVectorizer from
-    sklearn.feature_extraction.text. These techniques transform the comments into numerical vectors, enabling machine learning algorithms
+
+    To convert the text data into a format suitable for analysis, the project employs the `CountVectorizer` and `TfidfVectorizer` from
+    `sklearn.feature_extraction.text`. These techniques transform the comments into numerical vectors, enabling machine learning algorithms
     to process and analyze the text data effectively.
-    For a deeper understanding of the underlying themes within the comments, the project utilizes LatentDirichletAllocation from
-    sklearn.decomposition to perform topic modeling. This aids in uncovering latent topics or patterns within the discussions, contributing
+
+    For a deeper understanding of the underlying themes within the comments, the project utilizes `LatentDirichletAllocation` from
+    `sklearn.decomposition` to perform topic modeling. This aids in uncovering latent topics or patterns within the discussions, contributing
     valuable insights into prevalent themes.
     </div>
     """
     st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
 
     # Display the images in columns
+    st.subheader("Images:")
     col1, col2, col3 = st.columns(3)  # Adjust the number of columns as needed
     with col1:
-        st.image("reddit2.png", width=400, caption="Image 1")
+        st.image("reddit2.png", width=250, caption="Image 1")
     with col2:
-        st.image("reddit1.png", width=400, caption="Image 2")
+        st.image("reddit1.png", width=250, caption="Image 2")
     with col3:
-        st.image("reddit3.png", width=400, caption="Image 3")
+        st.image("reddit3.png", width=250, caption="Image 3")
 
-
-    # Keywords section for Project 4
-    keywords_project4 = [
+    # Keywords section for Project
+    keywords_project = [
         "Reddit Comments",
         "Text Mining",
         "Opinion Mining",
@@ -782,35 +780,32 @@ def display_detailed_description_project_4():
         "LatentDirichletAllocation",
     ]
 
-    keyword_boxes_project4 = [
-        f'<span style="background-color: #000; color: #3366cc; padding: 2px 3px; border-radius: 3px; margin-right: 5px;">{keyword}</span>'
-        for keyword in keywords_project4
+    keyword_boxes_project = [
+        f'<span style="background-color: #f0f0f0; color: #3366cc; padding: 5px 10px; border-radius: 10px; margin-right: 10px;">{keyword}</span>'
+        for keyword in keywords_project
     ]
 
-    keywords_html_project4 = " ".join(keyword_boxes_project4)
+    keywords_html_project = " ".join(keyword_boxes_project)
 
-    # Center-aligned Keywords for Project 4
+    # Center-aligned Keywords for Project
     st.markdown(
         f"""
-        <div style="text-align: center;">
-            <strong>Keywords:</strong> {keywords_html_project4}
+        <div style="text-align: center; margin-top: 20px;">
+            <strong>Keywords:</strong> {keywords_html_project}
         </div>
         """,
         unsafe_allow_html=True,
     )
 
-# Collapsible section for Project 4
+    # GitHub Link
+    st.subheader("GitHub Link:")
+    st.markdown("[GitHub Repository](https://github.com/sakib4535/Text-Mining-and-Opinion-Reddit/tree/main)", unsafe_allow_html=True)
+
+
+# Collapsible section for Project
 with st.expander("Project 4: GamersHub: Text and Opinion Mining of Reddit Comments"):
-    st.write("Short Description: Text and Opinion Mining of Reddit Comments.")
-    st.write("Click the button below to view detailed project description and images.")
-    if st.button("Show Detailed Description 4", key="detailed_description_4"):
-        display_detailed_description_project_4()
-
-
-
-
-# Function to display the detailed project description inside a markdown container
-import streamlit as st
+    st.write("Short Description: The project aims to analyze game ratings using machine learning.")
+    display_detailed_description_project()
 
 
 def display_detailed_description_project_5():
@@ -861,6 +856,46 @@ with st.expander(
     st.write("Click the button below to view detailed project description and analysis.")
     if st.button("Show Detailed Description 5", key="detailed_description_5"):
         display_detailed_description_project_5()
+
+
+import streamlit as st
+
+def display_detailed_description_project_6():
+    st.subheader("***Telecommunication Customer Churn Prediction***")
+
+    # Description content inside a markdown container
+    description_content = """
+    <div style="
+        border: 2px solid #3366cc;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: left;
+        margin-left: 40px;  /* Adjust the margin for right shift */
+    ">
+    📊 Successfully conducted an in-depth analysis of a telecommunications company's customer churn dataset to enhance decision-making processes. 📈
+
+    💡 Leveraged feature engineering techniques to extract meaningful insights from customer data. Uncovered valuable patterns that contribute to customer churn and retention. 🧠
+
+    🤖 Employed state-of-the-art machine learning methodologies to predict customer churn and develop strategies for retention. 📉
+
+    📈 Achieved an impressive 80% accuracy rate in predicting customer churn through an Artificial Neural Network model. Demonstrating that proactive retention strategies can significantly impact customer loyalty and company profitability. 💼
+
+    🔍 Explored the relationship between customer characteristics and churn, identifying factors such as contract duration and service usage that influence customer decisions. 📝
+
+    🔮 Provided actionable recommendations for improving customer retention, including the development of personalized offers, customer support enhancements, and optimized billing strategies. 💼
+    </div>
+    """
+    st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
+
+    # GitHub Link
+    st.subheader("GitHub Link:")
+    st.markdown("[GitHub Repository](https://github.com/sakib4535/Telecommunication-Customer-Churn-Prediction)", unsafe_allow_html=True)
+
+# Collapsible section for Project 6
+with st.expander("Project 6: Telecommunication Customer Churn Prediction"):
+    st.write("Short Description: Successfully conducted an in-depth analysis of a telecommunications company's customer churn dataset.")
+    display_detailed_description_project_6()
+
 
 # You can add more projects and sections as needed
 
