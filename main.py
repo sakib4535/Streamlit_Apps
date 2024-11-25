@@ -152,13 +152,16 @@ interest_zones = {
         "📰 Media Content Analysis",
         "🔍 Segmentation Analytics",
         "🌐 Network Analysis",
-        "🧠 Sentiment Analysis"
+        "🧠 Sentiment Analysis",
+        "📊 Anomaly Detection",
+        "🗂️ Hate Speech Detection",
+        "💬 Political Affiliation Detection"
     ],
     "Natural Language Processing": [
         "📝 Word Embedding", "🔢 TF-IDF", "🔠 Vectorization", "🗣️ Bag of Words",
         "🏷️ Name Entity Recognition (NER)", "📉 Stemming/Lemmatization",
         "🧩 Syntactic Parsing", "🔗 Dependency Parsing", "🔍 Topic Modeling",
-        "📑 Document-Term Matrix", "📈 Text Classification", "⚖️ Performance Metrics"
+        "📑 Document-Term Matrix", "📈 Text Classification", "⚖️ Performance Metrics", "🛠️ Seq2Seq", "🔍Attention", "📚 LLM (Large Language Model)"
     ],
     "Machine and Deep Learning": [
         "🔄 Ensemble Methods (LightGBM, XGBoost, AdaBoost, GBM)",
@@ -168,7 +171,7 @@ interest_zones = {
         "🚫 Overfitting and Regularization", "🔍 Model Evaluation and Validation"
     ],
     "Data Visualization": [
-        "📊 Data Insights", "📉 Interactive Charts", "📖 Data Storytelling"
+        "📊 Data Insights", "📉 Interactive Charts", "📖 Data Storytelling", "Data Manipulation and Scaling", "Geospatial Data Visualization", "Interactive Dash Board"
     ]
 }
 
