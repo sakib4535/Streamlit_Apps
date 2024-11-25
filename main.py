@@ -64,7 +64,7 @@ st.markdown(
 
 # Add a cover image
 background_image = Image.open("brain.jpg")
-st.image(background_image, use_column_width=True, caption="")
+st.image(background_image, use_container_width=True, caption="")
 
 # Create a container for the header
 header_container = st.container()
@@ -87,110 +87,170 @@ with header_container:
         st.title("Hasnain Imtiaz")
         st.markdown("<i>Machine Learning, Data and Technology Enthusiast</i>", unsafe_allow_html=True)
         st.write(
-            """ I possess a robust grasp of statistical concepts and command a strong understanding of cutting-edge 
-            machine learning algorithms, including but not limited to Machine Learning (Supervised and Unsupervised).
-             Moreover, as an independent Python programmer and developer, I've honed my skills through self-initiated projects. This hands-on 
-             experience allows me to leverage Python's diverse libraries and tools proficiently, enhancing my capabilities in data analysis and model development.
-             I possess both knowledge and hands-on experience, which I've gained through independent work by applying advanced methods 
-             like ensembling learning, transfer learning, neural network and deep learning with a strong emphasis on comprehensive 
-             data preprocessing, feature engineering, and hyperparameter tuning to maximize and elevate model performance. 
-             My commitment to excellence extends to the field of Data Science and Big Data Technology, prioritizing efficient computational processes. 
+            """ I possess a deep and methodical understanding of statistical principles, enabling me to command robust expertise in machine learning, spanning supervised algorithms like 
+            regression and classification, unsupervised techniques such as clustering and dimensionality reduction, and 
+            reinforcement learning for dynamic decision-making and optimization, all complemented by a strong emphasis on 
+            hyperparameter tuning, model adaptation, and solving complex, domain-specific challenges.
+             Throughout my academic journey and professional endeavors, I have designed, developed, and deployed 
+             sophisticated machine learning and deep learning algorithms. This includes applying neural networks, 
+             bagging and boosting techniques (such as XGBoost, LightGBM, and AdaBoost), and graph-based algorithms 
+             to tackle diverse challenges like text analysis and mining, anomaly detection, emotion recognition, and social network analysis. 
+             Leveraging principles of information retrieval and extraction, I have conducted in-depth text mining 
+             on unstructured data to derive actionable insights. 
+             I am deeply committed to fostering interdisciplinary collaborations at the nexus of computational science, 
+             mathematics, social science, and human communication. By integrating diverse methodologies, I aim to create 
+             channels that process information through multiple dimensions, ensuring nuanced and realistic interpretations
+              of complex phenomena. My approach emphasizes filtering out noise and enhancing signal accuracy, enabling 
+              robust predictions and innovative solutions. This philosophy is rooted in the belief that multidimensional 
+              perspectives enrich our understanding and pave the way for transformative discoveries.
  """
         )
 
 
 
-# Interest Zones section
-st.title("Interest Zones")
+import streamlit as st
+
+import streamlit as st
+
+# Title with double underline
+st.markdown("""
+    <h1 style="
+        font-family: 'Arial', sans-serif;
+        font-size: 36px;
+        text-align: center;
+        color: #2C3E50;
+        margin-bottom: 30px;
+        position: relative;
+    ">
+        Core Interests and Competencies
+        <div style="
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #9b59b6, #f39c12);
+            border-radius: 5px;
+        "></div>
+        <div style="
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #2C3E50;
+            border-radius: 5px;
+        "></div>
+    </h1>
+""", unsafe_allow_html=True)
 
 # Define your interest zones and keywords
 interest_zones = {
     "Communication Data Science": [
-            "Social Media Analytics",
-            "Text/Opinion Mining",
-            "Media Content Analysis",
-            "Segmentation Analytics",
-            "Network Analysis",
-            "Sentiment Analysis"
-        ],
-
-    "Natural Language Processing": ["Word Embedding", "TF-IDF (Term Frequency-Inverse Document Frequency)", "Vectorization", "Bag of Words", "Name Entity Recognition(NER)", "Stemming/Lemmatization", "Syntactic Parsing", "Dependency Parsing",  "Topic Modeling", "Document-Term Matrix", "Text Classification", "Performance Metrics"],
-    "Machine and Deep Learning": ["""Ensemble Methods and Learning (LightLGB, XGBoost, AdaBoost, GBM, Bagging, Boosting), 
-                                  Neural Networks (CNN, RNN, LSTM),
-                                  Transfer Learning,
-                                  Sequence Labeling,
-                                  Attention Mechanisms,
-                                  Supervised Learning (Classification and Regression),
-                                  Unsupervised Learning (Clustering),
-                                  Feature Engineering,
-                                  Overfitting and Regularization,
-                                  Model Evaluation and Validation"""],
-
-    "Data Visualization": ["Data Insights", "Interactive Charts", "Data Storytelling"],
+        "📊 Social Media Analytics",
+        "💬 Text/Opinion Mining",
+        "📰 Media Content Analysis",
+        "🔍 Segmentation Analytics",
+        "🌐 Network Analysis",
+        "🧠 Sentiment Analysis"
+    ],
+    "Natural Language Processing": [
+        "📝 Word Embedding", "🔢 TF-IDF", "🔠 Vectorization", "🗣️ Bag of Words",
+        "🏷️ Name Entity Recognition (NER)", "📉 Stemming/Lemmatization",
+        "🧩 Syntactic Parsing", "🔗 Dependency Parsing", "🔍 Topic Modeling",
+        "📑 Document-Term Matrix", "📈 Text Classification", "⚖️ Performance Metrics"
+    ],
+    "Machine and Deep Learning": [
+        "🔄 Ensemble Methods (LightGBM, XGBoost, AdaBoost, GBM)",
+        "🤖 Neural Networks (CNN, RNN, LSTM)", "🔄 Transfer Learning",
+        "🏷️ Sequence Labeling", "🔍 Attention Mechanisms", "📚 Supervised Learning",
+        "🔄 Unsupervised Learning (Clustering)", "🔧 Feature Engineering",
+        "🚫 Overfitting and Regularization", "🔍 Model Evaluation and Validation"
+    ],
+    "Data Visualization": [
+        "📊 Data Insights", "📉 Interactive Charts", "📖 Data Storytelling"
+    ]
 }
 
-st.write("Here are some of my key interest zones:")
+# Creating four columns for each interest zone
+col1, col2, col3, col4 = st.columns(4)
 
-# Display interest zones and keywords in keyword-like boxes
-for zone, keywords in interest_zones.items():
-    st.subheader(zone)
-    keyword_box = ", ".join([f"`{keyword}`" for keyword in keywords])
-    st.markdown(f"Keywords: {keyword_box}")
+# Custom HTML for section titles (single underline)
+def create_title_with_underline(title):
+    return f"""
+    <h2 style='
+        font-family: "Arial", sans-serif; 
+        font-size: 26px; 
+        text-align: center; 
+        color: #2C3E50; 
+        margin-bottom: 20px;
+        position: relative;
+    '>
+        {title}
+        <div style='
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #3498db, #9b59b6, #f39c12);
+            border-radius: 5px;
+        '></div>
+    </h2>
+    """
 
+# Display each interest zone in its respective column with styled titles
+with col1:
+    st.markdown(create_title_with_underline("Communication Data Science"), unsafe_allow_html=True)
+    st.markdown("<ul>" + "".join([f"<li>{keyword}</li>" for keyword in interest_zones["Communication Data Science"]]) + "</ul>", unsafe_allow_html=True)
 
+with col2:
+    st.markdown(create_title_with_underline("Natural Language Processing"), unsafe_allow_html=True)
+    st.markdown("<ul>" + "".join([f"<li>{keyword}</li>" for keyword in interest_zones["Natural Language Processing"]]) + "</ul>", unsafe_allow_html=True)
 
+with col3:
+    st.markdown(create_title_with_underline("Machine and Deep Learning"), unsafe_allow_html=True)
+    st.markdown("<ul>" + "".join([f"<li>{keyword}</li>" for keyword in interest_zones["Machine and Deep Learning"]]) + "</ul>", unsafe_allow_html=True)
 
-################################
+with col4:
+    st.markdown(create_title_with_underline("Data Visualization"), unsafe_allow_html=True)
+    st.markdown("<ul>" + "".join([f"<li>{keyword}</li>" for keyword in interest_zones["Data Visualization"]]) + "</ul>", unsafe_allow_html=True)
 
-# CSS for the button style
-button_style = """
-    background: linear-gradient(45deg, #FFD700, #FF1493, #00BFFF, #32CD32);
-    background-size: 200% 200%;
-    animation: glowing 3s linear infinite;
-    color: white;
-    padding: 20px 40px;
-    font-size: 24px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-}
+# CSS styling for horizontal row layout
+st.markdown("""
+    <style>
+        .grid-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .grid-box {
+            flex: 1 1 23%;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            max-width: 23%;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .keyword-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 16px;
+            color: #444;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-@keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 200% 200%;
-    }
-}
-
-/* Add hover effect */
-.big-button:hover {
-    transform: scale(1.05);
-}
-
-/* Style for the big box */
-.big-box {
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-#surprise-box {
-    display: none;
-}
-
-function throwEmoticons() {
-    const surpriseBox = document.getElementById("surprise-box");
-    surpriseBox.innerHTML = "🎉😄🥳";
-    surpriseBox.style.display = "block";
-}
-"""
-
+#####################
 # Create a div with a custom button style using st.markdown
 if st.button("Click Me for INSIGHTS!", key="click_me_button", help="Click to show the big box"):
     st.markdown(
@@ -527,6 +587,89 @@ st.markdown(f"<div style='{box_style}'>"
     "cyber attacks, and the influence of social media platforms on public opinion and discourse."
     "</div>", unsafe_allow_html=True)
 
+
+
+######################################################################
+# Sample data for demonstration
+projects = [
+    {"image": "drug.png", "description": ""},
+    {"image": "boxplot_total_votes.png", "description": ""},
+    {"image": "data_science.png", "description": ""},
+    # {"image": "eth.png", "description": "Financial reporting in Excel."},
+    {"image": "netflix.png", "description": ""},
+    {"image": "nvidia.png", "description": ""},
+    {"image": "disney.png", "description": ""},
+    # {"image": "path/to/image8.jpg", "description": "Employee performance dashboard in Excel."},
+    # {"image": "path/to/image9.jpg", "description": "Year-over-year growth analysis in Tableau."}
+]
+
+# Section header
+st.title("Data Visualization - From My Projects")
+st.write("Showcasing some of my best data visualizations and insights using Excel and Tableau.")
+
+# Display the projects
+for i in range(0, len(projects), 3):  # Loop through projects in chunks of 3
+    cols = st.columns(3)  # Create 3 columns for the current row
+    for j in range(3):  # Loop through each column in the row
+        if i + j < len(projects):  # Ensure the project index is within bounds
+            project = projects[i + j]
+            with cols[j]:  # Place content in the current column
+                # Display the image
+                image = Image.open(project["image"])  # Load the image
+                st.image(image, use_container_width=True)
+                # Display the description
+                st.write(f"**{project['description']}**")
+
+
+################################################
+
+###############################################
+
+# Sample video data
+videos = [
+    {
+        "title": "🤖Voice Assistant - Falcon LLM🔊",
+        "video_path": "text-to-voice.mp4",
+        "description": "A voice assistant powered by Falcon LLM, designed to understand and respond intelligently to user commands"
+    },
+    {
+        "title": "📲Learning Information With API Interaction - InfoCare for USA🛰️",
+        "video_path": "my_app.mp4",
+        "description": "An API-based platform that provides real-time information and services for users in the USA, focusing on personalized learning and assistance."
+    },
+    {
+        "title": "💻Searching For News - Real-Time Interaction📡",
+        "video_path": "News_App.mp4",
+        "description": "A real-time news search system that allows users to interact and retrieve the latest news with instant updates and responses."
+
+    },
+    {
+        "title": "🧑‍Mapping Emotions of Texts (NLP Driven) - EmotionMapping 💻",
+        "video_path": "Project.mp4",
+        "description": "A natural language processing tool that analyzes text and maps emotional sentiment for insights into user reactions and feelings."
+    }
+]
+
+# Section header
+st.title("Project Videos")
+st.write("Watch the project demonstrations showcasing the practical implementations of my work.")
+
+# Display videos in a grid (2 columns per row for better visibility)
+for i in range(0, len(videos), 2):
+    cols = st.columns(2)  # Create a row with 2 columns
+    for j in range(2):
+        if i + j < len(videos):  # Ensure video exists
+            video = videos[i + j]
+            with cols[j]:
+                # Display video title
+                st.subheader(video["title"])
+                # Display video
+                st.video(video["video_path"])
+                # Display description
+                st.write(video["description"])
+
+
+
 # Projects
 # Projects
 
@@ -596,13 +739,14 @@ def display_detailed_description():
     # Display the images in columns
     col1, col2 = st.columns(2)  # Adjust the number of columns as needed
 
+    # Display images in a horizontal row using columns
+    col1, col2, col3 = st.columns(3)
     with col1:
-        st.image("relations-RF.png", width=400, caption="Sentiment Analysis Example")
-        # Add more images with st.image as needed
-
+        st.image("relations-RF.png", width=400, caption="Random Forest Tree Algorithm (RF)")
     with col2:
-        # Add more images or graphs in the second column
-        pass  # Use st.image to add images or st.pyplot to display graphs
+        st.image("DTvsRF.png", width=400, caption="Difference Between RF and DF Algorithms")
+    with col3:
+        st.image("relations-DT.png", width=400, caption="Decision Tree Algorithm (DF)")
 
     # GitHub Link
     st.subheader("GitHub Link:")
@@ -610,7 +754,6 @@ def display_detailed_description():
 
 # Collapsible section for the project
 with st.expander("Project 1: Game Data Analytics using Ratings, Playtime, Suggestions"):
-    st.write("Short Description: The project aims to analyze game ratings using machine learning.")
     display_detailed_description()
 
 
@@ -624,9 +767,10 @@ def display_detailed_description_project_2():
     <div style="
         border: 2px solid #3366cc;
         border-radius: 10px;
-        padding: 20px;
+        padding: 18px;
         text-align: left;
-        margin-left: 40px;  /* Adjust the margin for right shift */
+        margin-left: auto; /* Auto margin for center alignment */
+        margin-right: auto; /* Auto margin for center alignment */
     ">
     <ul>
         <li>Description: In today's fast-paced digital world, laptops have become an indispensable tool for both work and leisure. 
@@ -643,25 +787,32 @@ def display_detailed_description_project_2():
         informative graphs, highlighting the relative importance of each feature and enabling users to prioritize their preferences 
         based on budget and requirements.</li>
     </ul>
-    <img src="project02.png" alt="Graph 1" style="width: 400px; margin-top: 20px;">
-    <img src="laptop.png" alt="Graph 2" style="width: 400px; margin-top: 20px;">
     </div>
     """
     st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
 
+    # Display images in a horizontal row using columns
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.image("laptop.png", width=400, caption="Graph 1")
+    with col2:
+        st.image("project02.png", width=400, caption="Graph 2")
+    with col3:
+        st.image("laptop3.png", width=400, caption="Graph 2")
+
     # GitHub Link
     st.subheader("GitHub Link:")
-    st.markdown("[GitHub Repository](https://github.com/your-username/your-repository)", unsafe_allow_html=True)
+    st.markdown("[GitHub Repository](https://github.com/sakib4535/Projects-ML-Analytics/tree/main/Laptop%20Price%20Analysis)", unsafe_allow_html=True)
 
 # Collapsible section for Project 2
 with st.expander("Project 2: Laptop Prices: Unveiling the Key Factors Influencing Pricing Patterns"):
-    st.write("Short Description: Understanding factors influencing laptop prices.")
     display_detailed_description_project_2()
+
 
 
 # Function to display detailed description of Project 3
 def display_detailed_description_project_3():
-    st.subheader("""***Looking Through a National News Article Texts to learn about the name 'Joe Biden' !***""")
+    st.subheader("""***API Security: Access Behavior and Anomaly Detection With Boosting Algorithms (AdaBoost, Gradient Boost and XGBoost)***""")
 
     # Description content inside a markdown container
     description_content = """
@@ -673,28 +824,37 @@ def display_detailed_description_project_3():
         margin-left: auto; /* Auto margin for center alignment */
         margin-right: auto; /* Auto margin for center alignment */
     ">
-    Description: The aim of this project was to leverage Natural Language Processing (NLP) techniques to analyze a large corpus 
-    of national news articles to track and understand the mentions of the name 'Joe Biden.' The project incorporated various NLP 
-    methods, including Word Cloud generation, handling stop words, label encoding, and creating a Bag of Words representation.
+    Description: Detecting unusual API behaviors is essential for cybersecurity, 
+    particularly in sectors handling sensitive data. The dataset serves as a window into the intricate dynamics 
+    between microservice-based applications and their gateway to the digital world—Application Programming Interfaces
+     (APIs). In this realm, APIs act as the linchpin, facilitating seamless interactions between applications and 
+     programmatic functions.. High accuracy (83-86%) and strong ROC-AUC scores reflect reliable anomaly detection, 
+     while high precision and recall ensure efficient threat identification with minimal false alarms. 
+     For example, a high recall rate shows that the models consistently capture actual anomalies—an essential 
+     quality in environments with critical data.
     </div>
     """
     st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
 
-    # Display the images horizontally
-    st.image("g20.png", width=400, caption="Sentiment Analysis Example")
-    st.image("g20-1.png", width=400, caption="Image Classification Example")
-    st.image("g20-3.PNG", width=400, caption="Image Classification Example")
+    # Display images in a horizontal row using columns
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.image("cy1.png", width=400, caption="Sentiment Analysis Example")
+    with col2:
+        st.image("cy2.png", width=400, caption="Image Classification Example")
+    with col3:
+        st.image("cy3.png", width=400, caption="Image Classification Example")
 
     # Keywords section for Project 3
     keywords_project3 = [
-        "National News Articles",
-        "Natural Language Processing",
-        "NLP Techniques",
-        "Word Cloud",
-        "Stop Words",
-        "Label Encoding",
-        "Bag of Words",
-        "Joe Biden Mentions",
+        "API Security",
+        "Vulnerabilities",
+        "Anomaly Detection",
+        "Suspicious API ",
+        "AdaBoost",
+        "Gradient Boost",
+        "XGBoost",
+        "Security Threats",
     ]
 
     keyword_boxes_project3 = [
@@ -716,11 +876,10 @@ def display_detailed_description_project_3():
 
     # GitHub Link
     st.subheader("GitHub Link:")
-    st.markdown("[GitHub Repository](https://github.com/your-username/your-repository)", unsafe_allow_html=True)
+    st.markdown("[GitHub Repository](https://github.com/sakib4535/Cyber-Security-Data-Research)", unsafe_allow_html=True)
 
 # Collapsible section for Project 3
-with st.expander("Project 3: Looking Through a National News Article Texts to learn about the name 'Joe Biden'"):
-    st.write("Short Description: Analyzing national news articles for 'Joe Biden' mentions.")
+with st.expander("Project 3: API Security: Access Behavior and Anomaly Detection With Boosting Algorithms"):
     display_detailed_description_project_3()
 
 
@@ -739,7 +898,7 @@ def display_detailed_description_project():
         margin: 20px auto; /* Auto margin for center alignment */
         max-width: 800px; /* Limiting width for better readability */
     ">
-    Description: GamersHub: Text and Opinion Mining of Reddit Comments
+    Description:
 
     In the initial stages, the dataset of Reddit comments is likely collected and preprocessed. This entails tasks such as data cleaning,
     removal of irrelevant symbols, and potentially splitting the data into training and testing sets using `train_test_split` from
@@ -748,9 +907,7 @@ def display_detailed_description_project():
 
     To convert the text data into a format suitable for analysis, the project employs the `CountVectorizer` and `TfidfVectorizer` from
     `sklearn.feature_extraction.text`. These techniques transform the comments into numerical vectors, enabling machine learning algorithms
-    to process and analyze the text data effectively.
-
-    For a deeper understanding of the underlying themes within the comments, the project utilizes `LatentDirichletAllocation` from
+    to process and analyze the text data effectively.For a deeper understanding of the underlying themes within the comments, the project utilizes `LatentDirichletAllocation` from
     `sklearn.decomposition` to perform topic modeling. This aids in uncovering latent topics or patterns within the discussions, contributing
     valuable insights into prevalent themes.
     </div>
@@ -761,11 +918,11 @@ def display_detailed_description_project():
     st.subheader("Images:")
     col1, col2, col3 = st.columns(3)  # Adjust the number of columns as needed
     with col1:
-        st.image("reddit2.png", width=250, caption="Image 1")
+        st.image("reddit2.png", width=350, caption="Image 1")
     with col2:
-        st.image("reddit1.png", width=250, caption="Image 2")
+        st.image("reddit1.png", width=350, caption="Image 2")
     with col3:
-        st.image("reddit3.png", width=250, caption="Image 3")
+        st.image("reddit3.png", width=350, caption="Image 3")
 
     # Keywords section for Project
     keywords_project = [
@@ -809,8 +966,7 @@ with st.expander("Project 4: GamersHub: Text and Opinion Mining of Reddit Commen
 
 
 def display_detailed_description_project_5():
-    st.subheader(
-        "*** Multi-Label Text Sentiment Classification and Word Embedding Analysis for the Review of 'Thread' Social Media Application")
+    st.subheader("***Multi-Label Text Sentiment Classification and Word Embedding Analysis for the Review of 'Thread' Social Media Application***")
 
     # Description content inside a markdown container
     description_content = """
@@ -819,46 +975,51 @@ def display_detailed_description_project_5():
         border-radius: 10px;
         padding: 20px;
         text-align: left;
-        margin-left: auto; /* Auto margin for center alignment */
-        margin-right: auto; /* Auto margin for center alignment */
+        margin-left: 40px; /* Right shift for alignment */
     ">
-    Description: Multi-Label Text Sentiment Classification and Word Embedding Analysis for the Review of 'Thread' Social Media Application
-    <ul>
-        <li>📢 Comprehensive Dataset: With over 37,000 reviews, our meticulously curated dataset captures a substantial and representative sample of user feedback from both Android and iOS platforms, 
-        offering a comprehensive view of the "Thread" app's reception.</li>
-        <li>💬 Label-wise accuracies are impressive, with Positive Sentiment at 88.25%, Negative Sentiment at 98.20%, and 
-        Neutral Sentiment at 91.00%. The mean accuracy of 92.48% reflects the model's strong performance across all categories.</li>
-        <li>
-            <img src="your_image_path_here.png" alt="Your Image" style="width: 300px; margin-top: 10px;">
-            <p style="font-style: italic; font-size: 12px; text-align: center;">Image 1: Your Image Caption</p>
-        </li>
-        <!-- Include more list items or images as needed -->
-    </ul>
+    📊 Comprehensive dataset of over 37,000 reviews capturing extensive user feedback from both Android and iOS platforms, 
+    offering insights into the "Thread" app's reception. 📝
 
-    <!-- Keywords section -->
-    <div style="text-align: center; margin-top: 20px;">
-        <strong>Keywords:</strong>
-        <span style="background-color: #000; color: #3366cc; padding: 2px 3px; border-radius: 3px; margin-right: 5px;">Keyword1</span>
-        <span style="background-color: #000; color: #3366cc; padding: 2px 3px; border-radius: 3px; margin-right: 5px;">Keyword2</span>
-        <!-- Add more keywords in a similar format -->
-    </div>
+    💬 Achieved label-wise accuracies: Positive Sentiment at 88.25%, Negative Sentiment at 98.20%, and Neutral Sentiment at 91.00%. 
+    With a mean accuracy of 92.48%, the model demonstrates strong performance across sentiment categories. 📈
 
+    🔍 Leveraged word embedding analysis for detailed text classification, identifying prevalent themes within user sentiments. 🌐
+
+    🤖 Applied multi-label text sentiment classification methods, integrating diverse data to enhance understanding of user perspectives. 🧠
+
+    🔮 Insights from this project contribute to understanding social media feedback dynamics, aiding in app feature improvements and customer satisfaction strategies. 💼
     </div>
     """
     st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
 
+    # Display the images in columns
+    st.subheader("Images:")
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.image("th1.png", width=350, caption="Image 1")
+    with col2:
+        st.image("th2.png", width=350, caption="Image 2")
+    with col3:
+        st.image("th3.png", width=350, caption="Image 3")
+
+    col4, col5, col6 = st.columns(3)
+    with col4:
+
+        st.image("th4.png", width=850, caption="Image 4")
+
+
+    # GitHub Link
+    st.subheader("GitHub Link:")
+    st.markdown("[GitHub Repository](https://github.com/sakib4535/Text-Mining-and-Opinion-Reddit/tree/main)", unsafe_allow_html=True)
 
 # Collapsible section for Project 5
-with st.expander(
-        "Project 5: Multi-Label Text Sentiment Classification and Word Embedding Analysis for the Review of 'Thread' Social Media Application"):
-    st.write(
-        "Short Description: Multi-label sentiment analysis and word embedding analysis for a social media application.")
-    st.write("Click the button below to view detailed project description and analysis.")
-    if st.button("Show Detailed Description 5", key="detailed_description_5"):
-        display_detailed_description_project_5()
+with st.expander("Project 5: Multi-Label Text Sentiment Classification and Word Embedding Analysis for the Review of 'Thread' Social Media Application"):
+    st.write("Short Description: Multi-label sentiment analysis and word embedding analysis for a social media application.")
+    display_detailed_description_project_5()
 
 
-import streamlit as st
+
+
 
 def display_detailed_description_project_6():
     st.subheader("***Telecommunication Customer Churn Prediction***")
@@ -886,6 +1047,23 @@ def display_detailed_description_project_6():
     </div>
     """
     st.markdown(description_content, unsafe_allow_html=True)  # Display the HTML content in Markdown
+
+    st.subheader("Images:")
+    col1, col2, col3 = st.columns(3)  # Adjust the number of columns as needed
+    with col1:
+        st.image("tel1.png", width=350, caption="Image 1")
+    with col2:
+        st.image("tel2.png", width=350, caption="Image 2")
+    with col3:
+        st.image("tel3.png", width=350, caption="Image 3")
+
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        st.image("tel4.png", width=350, caption="Image 4")
+    with col5:
+        st.image("tel5.png", width=350, caption="Image 5")
+    with col6:
+        st.image("tel6.png", width=350, caption="Image 6")
 
     # GitHub Link
     st.subheader("GitHub Link:")
