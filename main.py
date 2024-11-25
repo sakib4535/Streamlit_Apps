@@ -171,7 +171,7 @@ interest_zones = {
         "🚫 Overfitting and Regularization", "🔍 Model Evaluation and Validation"
     ],
     "Data Visualization": [
-        "📊 Data Insights", "📉 Interactive Charts", "📖 Data Storytelling", "Data Manipulation and Scaling", "Geospatial Data Visualization", "Interactive Dash Board"
+        "📊 Data Insights", "📉 Interactive Charts", "📖 Data Storytelling", "📱 Data Manipulation and Scaling", "🌍 Geospatial Data Visualization", "📊 Interactive Dash Board"
     ]
 }
 
